@@ -10,6 +10,10 @@ let MAX_COUNT = 7
 
 exports.get = (listener) => {
     request(url, function (error, response, body) {
+        if (error) {
+            return
+        }
+
         $ = cheerio.load(body)
         let result = []
 

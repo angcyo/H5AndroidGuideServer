@@ -10,6 +10,9 @@ let MAX_COUNT = 5
 
 exports.get = (listener) => {
     request(url, function (error, response, body) {
+        if (error) {
+            return
+        }
         //console.log(body)
         // fs.writeFile('./csdn.html', body, (err) => {
         //     console.log('save')

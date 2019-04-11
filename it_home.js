@@ -10,6 +10,10 @@ let MAX_COUNT = 5
 
 exports.get = (listener) => {
     request(url, function (error, response, body) {
+        if (error) {
+            return
+        }
+        
         const $ = cheerio.load(body)
         let result = []
         $('.cate_list').find('.ulcl').find('li').each((index, elem) => {

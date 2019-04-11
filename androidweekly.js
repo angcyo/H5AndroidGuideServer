@@ -10,6 +10,9 @@ let MAX_COUNT = 9
 
 exports.get = (listener) => {
     request(url, function (error, response, body) {
+        if (error) {
+            return
+        }
         let $ = cheerio.load(body)
         let cardUrl = BASE_URL + $('.row').find('.card').eq(0).find('.card-header').eq(0).find('a').eq(0).attr('href')
         let user = $('.row').find('.card').eq(0).find('.content').eq(0).find('a').eq(0).text()
