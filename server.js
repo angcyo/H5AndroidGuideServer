@@ -20,7 +20,7 @@ http.createServer(function (request, response) {
 
     let time = new Date().toLocaleString()
     let urlLog = `${time} 收到请求:${url} 来源:${getClientIP(request)}\r\n`
-    console.log(`${time} 收到请求:${url} ${request.headers['host']}`);
+    console.log(urlLog);
     httpLog(urlLog)
     for (const key in request.headers) {
         if (request.headers.hasOwnProperty(key)) {
