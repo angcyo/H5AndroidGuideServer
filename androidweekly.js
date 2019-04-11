@@ -14,8 +14,8 @@ exports.get = (listener) => {
         let cardUrl = BASE_URL + $('.row').find('.card').eq(0).find('.card-header').eq(0).find('a').eq(0).attr('href')
         let user = $('.row').find('.card').eq(0).find('.content').eq(0).find('a').eq(0).text()
 
-        console.log(cardUrl)
-        console.log(user)
+        // console.log(cardUrl)
+        // console.log(user)
         let date = new Date();
         let year = date.getFullYear();
         let month = date.getMonth() + 1;
