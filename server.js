@@ -11,7 +11,7 @@ const ip = '0.0.0.0'
 http.createServer(function (request, response) {
     response.writeHead(200, {
         'Content-Type': 'application/json; charset=utf-8',
-        'Access-Control-Allow-Origin': 'www.angcyo.com,angcyo.com'
+        'Access-Control-Allow-Origin': 'angcyo.com'
     });
 
     let url = request.url
