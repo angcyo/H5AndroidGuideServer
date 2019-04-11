@@ -4,6 +4,7 @@ const my_csdn = require('./my_csdn')
 const it_home = require('./it_home')
 const androidweekly = require('./androidweekly')
 const wanandroid = require('./wanandroid')
+const gityuan = require('./gityuan')
 
 let port = 9898;
 http.createServer(function (request, response) {
@@ -39,6 +40,12 @@ http.createServer(function (request, response) {
         })
     } else if (url.startsWith('/wanandroid')) {
         wanandroid.get({
+            onResult: (json) => {
+                response.end(json);
+            }
+        })
+    } else if (url.startsWith('/gityuan')) {
+        gityuan.get({
             onResult: (json) => {
                 response.end(json);
             }
