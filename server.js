@@ -19,7 +19,7 @@ http.createServer(function (request, response) {
     let url = request.url
 
     let time = new Date().toLocaleString()
-    let urlLog = `${time} 收到请求:${url}\r\n`
+    let urlLog = `${time} 收到请求:${url} 来源:${getClientIP(request)}\r\n`
     console.log(`${time} 收到请求:${url} ${request.headers['host']}`);
     httpLog(urlLog)
     for (const key in request.headers) {
@@ -76,4 +76,10 @@ function httpLog(data) {
     });
 }
 
+function getClientIP(req) {
+    return req.headers['x-forwarded-for'] || // 判断是否有反向代理 IP
+        req.connection.remoteAddress || // 判断 connection 的远程 IP
+        req.socket.remoteAddress || // 判断后端的 socket 的 IP
+        req.connection.socket.remoteAddress;
+}
 console.log(`Server running at http://${ip}:${port}/`);
