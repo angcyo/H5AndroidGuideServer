@@ -25,7 +25,7 @@ exports.get = (listener) => {
 
             let result = []
             $('.archive-item').each(function (index, elem) {
-                if (index >= MAX_COUNT) {
+                if (result.length >= MAX_COUNT) {
                     return
                 }
                 // console.log(index)

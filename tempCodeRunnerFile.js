@@ -1,1 +1,2 @@
-resolve
+
+            console.log(index)
