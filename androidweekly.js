@@ -6,7 +6,7 @@ var request = require('request');
 var url = 'https://www.androidweekly.cn/'
 var BASE_URL = url
 
-let MAX_COUNT = 5
+let MAX_COUNT = 9
 
 exports.get = (listener) => {
     request(url, function (error, response, body) {
@@ -37,7 +37,7 @@ exports.get = (listener) => {
                 item.title = $(elem).text().trim()
                 item.time = time
 
-                item.des = '新闻-暂无描述'
+                item.des = ''
 
                 item.link = $(elem).attr("href")
 
