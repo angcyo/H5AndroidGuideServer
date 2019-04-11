@@ -1,1132 +1,2670 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<title>Android 开发技术周报</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<!-- stylesheets -->
+	<link href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en" rel="stylesheet">
+	<link rel="stylesheet" href="/assets/css/bootstrap.min.css?v=775cc42b9a">
+	<link rel="stylesheet" href="/assets/css/font-awesome.min.css?v=775cc42b9a">
+	<link rel="stylesheet" type="text/css" href="/assets/css/hl-styles/monokai_sublime.css?v=775cc42b9a">
+	<link rel="stylesheet" type="text/css" href="/assets/css/screen.css?v=775cc42b9a">
+	<script>
+/*====================================================
+  THEME SETTINGS & GLOBAL VARIABLES
+====================================================*/
+//  1. Disqus comment settings
+var disqus_shortname = 'androidweekly'; // required: replace example with your forum shortname
 
-<!doctype html>
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-        <title>IT之家（博客版） - 数码，科技，生活 - 软媒旗下</title>
-        <meta charset="utf-8" />
-        <meta name="description" content="IT之家，青岛软媒旗下，IT科技门户网站。快速精选IT新闻，实时报道科技周边，关注苹果iOS、谷歌Android、微软Windows Phone，紧盯iPhone/iPad、安卓智能设备、WP手机等数码潮流。技术资讯、攻略教程、资源下载 - IT人的生活，尽在IT之家，爱IT，爱这里。" />
-<meta name="keywords" content="IT新闻,互联网,Internet,数码,科技,科普,通信,智能手机,IT之家,ithome,软媒" />
-<meta http-equiv="pragma" content="no-cache">
-<meta http-equiv="Cache-Control" content="no-cache, must-revalidate">
-<meta http-equiv="expires" content="0">
-<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="http://www.ithome.com/rss/" />
-        <link href="//www.ithome.com/css/style.css" rel="stylesheet" type="text/css" />
-        <link rel="icon" href="//www.ithome.com/favicon.ico" mce_href="//www.ithome.com/favicon.ico" type="image/x-icon" />
-        <link rel="shortcut icon" href="//www.ithome.com/favicon.ico"/>
-    </head>
-    <body class="bg blog">
-        
-<script src="https://dup.baidustatic.com/js/ds.js"></script>
-<link rel="stylesheet" href="//www.ithome.com/css/top.css?r=2017021312" type="text/css" />
-<script src="//img.ithome.com/file/js/ua.js?r=2017110" type="text/javascript"></script>
-<div id="hd">
-    <!-- 导航区域 -->
-    <div id="nav">
-        <!-- 主导航 -->
-        <div class="an">
-            <a href="//www.ithome.com/" class="nav-item nav-item-1 sel">IT之家</a>
-            <div class="nl">
-                <div class="nl-con">
-                    <div class="bx bx1">
-                        <h2 class="cate-title">资讯</h2>
-                        <ul class="cate-list">
-                            <li>
-                                <span class="cate-sub-title">
-                                    <a href="//it.ithome.com/">IT资讯</a>
-                                </span>
-                            </li>
-                            <li>
-                                <span class="cate-sub-title">
-                                    <a href="//discovery.ithome.com/">科学频道</a>
-                                </span>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="bx bx1">
-                        <h2 class="cate-title">极客</h2>
-                        <ul class="cate-list">
-                            <li>
-                                <span class="cate-sub-title">
-                                    <a href="//mobile.ithome.com/">玩手机</a>
-                                </span>
-                            </li>
-                            <li>
-                                <span class="cate-sub-title">
-                                    <a href="//android.ithome.com/">安卓之家</a>
-                                </span>
-                            </li>
-                            <li>
-                                <span class="cate-sub-title">
-                                    <a href="//digi.ithome.com/">数码之家</a>
-                                </span>
-                            </li>
-                            <li>
-                                <span class="cate-sub-title">
-                                    <a href="//next.ithome.com/">智能时代</a>
-                                </span>
-                            </li>
-                        </ul>
-                    </div>
-                    <!-- bx1 End -->
-                    <div class="bx bx2">
-                        <h2 class="cate-title">微软</h2>
-                        <ul class="cate-list">
-                            <li>
-                                <span class="cate-sub-title">
-                                    <a href="//wp.ithome.com/">WP之家</a>
-                                </span>
-                            </li>
-                            <li>
-                                <span class="cate-sub-title">
-                                    <a href="//win10.ithome.com/">Win10之家</a>
-                                </span>
-                            </li>
-                            <li>
-                                <span class="cate-sub-title">
-                                    <a href="//win8.ithome.com/">Win8之家</a>
-                                </span>
-                            </li>
-                            <li>
-                                <span class="cate-sub-title">
-                                    <a href="//win7.ithome.com/">Win7之家</a>
-                                </span>
-                            </li>
-                        </ul>
-                    </div>
-                    <!-- bx2 End -->
-                    <div class="bx bx3">
-                        <h2 class="cate-title">苹果</h2>
-                        <ul class="cate-list">
-                            <li>
-                                <span class="cate-sub-title">
-                                    <a href="//iphone.ithome.com/">iPhone之家</a>
-                                </span>
-                            </li>
-                            <li>
-                                <span class="cate-sub-title">
-                                    <a href="//ipad.ithome.com/">iPad之家</a>
-                                </span>
-                            </li>
-                            <li>
-                                <span class="cate-sub-title">
-                                    <a href="//mac.ithome.com/">Mac之家</a>
-                                </span>
-                            </li>
-                            <li>
-                                <span class="cate-sub-title">
-                                    <a href="//ios.ithome.com/">iOS之家</a>
-                                </span>
-                            </li>
-                        </ul>
-                    </div>
-                    <!-- bx3 End -->
-                    <!-- bx4 End -->
-                    <div class="bx bx5 nb">
-                        <h2 class="cate-title">资源</h2>
-                        <ul class="cate-list">
-                            <li>
-                                <span class="cate-sub-title">
-                                    <a href="//soft.ithome.com/">软件之家</a>
-                                </span>
-                            </li>
-                            <li>
-                                <span class="cate-sub-title">
-                                    <a href="//zhuti.ithome.com/">主题之家</a>
-                                </span>
-                            </li>
-                            <li>
-                                <span class="cate-sub-title">
-                                    <a href="//www.ithome.com/bibei/">装机必备</a>
-                                </span>
-                            </li>
-                        </ul>
-                    </div>
-                    <!-- bx5 End -->
-                </div>
-                <div class="all_cate">
-                    <a href="//www.ithome.com/sitemap/">全部分类&gt;&gt;</a>
-                </div>
-            </div>
-            <!-- nl End -->
-        </div>
-        <!-- an End -->
-        <ul class="nav_list">
-            <li>
-                <a target="_blank" href="//www.lapin365.com/" class="nav-item nav-item-7">辣品</a>
-            </li>
-            <li class="quan">
-                <a href="//quan.ithome.com/" class="nav-item nav-item-5" target="_blank">IT圈</a>
-                <div class="nlquan">
-                    <a href="//quan.ithome.com/talk/">科技畅谈</a>
-                    <a href="//quan.ithome.com/geek/">极客圈</a>
-                    <a href="//quan.ithome.com/android/">安卓圈</a>
-                    <a href="//quan.ithome.com/ios/">iOS圈</a>
-                    <a href="//quan.ithome.com/win10/">Win10圈</a>
-                    <a href="//quan.ithome.com/win10mobile/">Win10手机圈</a>
-                    <a href="//quan.ithome.com/ruanmei/">软媒产品</a>
-                    <a href="//quan.ithome.com/helpcenter/">站务处理</a>
-                </div>
-            </li>
-        </ul>
-        <div class="tb-nav">
-            <div class="tb-item">
-                    <a  href="//dyn.ithome.com/tougao/"  target="_blank"  class="item-link">投稿</a>
-            </div>
-            <div class="tb-item dm">
-                <a href="javascript:;" class="item-link item-link-2">订阅</a>
-                <div id="dy" class="menu feed">
-                    <ul class="mn_con">
-                        <li>
-                            <a href="//www.ithome.com/rss/">RSS订阅</a>
-                        </li>
-                        <li>
-                            <a href="#" onclick="window.external.addFavorite('http://www.ithome.com/', 'IT之家 - ithome.com')">收藏IT之家</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div class="tb-item dm">
-                <a href="javascript:;" class="item-link item-link-3" id="rm_app">软媒应用</a>
-                <div id="app" class="menu app">
-                    <ul class="mn_con">
-                        <li>
-                            <a href="https://m.ruanmei.com/" target="_blank">软媒App应用</a>
-                        </li>
-                        <li>
-                            <a href="http://qiyu.ruanmei.com/" target="_blank">旗鱼浏览器</a>
-                        </li>
-                        <li>
-                            <a href="http://mofang.ruanmei.com/" target="_blank">软媒魔方</a>
-                        </li>
-                        <li>
-                            <a href="http://sj.ruanmei.com/" target="_blank">软媒时间</a>
-                        </li>
-                        <li>
-                            <a href="http://www.cooldock.com/" target="_blank">酷点桌面</a>
-                        </li>
+//  2. Fixed navbar
+var fixed_navbar = true;
 
-                    </ul>
-                </div>
-            </div>
+//  3. Dark Color Scheme
+var dark_color_scheme = true;
 
-            <div class="tb-item dm">
-                <div id="toplogin"></div>
-            </div>
-        </div>
-        <!-- tb-nav End -->
-    </div>
-</div>
-
-    <div class="view view_setting">
-        <div class="set_con">    
-            <p class="c_st"><span class="set_op">内容字号：</span><a href="javascript:;" id="fs1">默认</a><span class="v"></span><a href="javascript:;" id="fs2">大号</a><span class="v"></span><a href="javascript:;" id="fs3">超大号</a></p>    
-            <p class="c_st"><span class="set_op">段落设置：</span><a href="javascript:;" id="indt">取消段首缩进</a><a href="javascript:;" id="noindt" class="hide">段首缩进</a></p>    
-            <p class="g_st"><span class="set_op">字体设置：</span><a href="javascript:;" id="yahei">切换到微软雅黑</a><a href="javascript:;" id="song" class="hide">切换到宋体</a></p>    
-        </div>
-    </div>
-
-
-    <div id="top5" class="clearfix">
-        <a href="//www.ithome.com" id="logo"><img src="//img.ithome.com/images/v2.3/ithome.logo.png" alt="IT之家" /></a>
-        <div class="col">
-            <a href="//it.ithome.com/">业界资讯</a>
-            <a href="//soft.ithome.com/">软件之家</a>
-        </div>
-        <div class="col">
-            <a href="//win10.ithome.com/">Win10之家</a>
-            <a href="//wp.ithome.com/">WP之家</a>
-        </div>
-        <div class="col">
-            <a href="//iphone.ithome.com/">iPhone之家</a>
-            <a href="//ipad.ithome.com/">iPad之家</a>
-        </div>
-        <div class="col">
-            <a href="//android.ithome.com/">安卓之家</a>
-            <a href="//digi.ithome.com/">数码之家</a>
-        </div>
-        <div class="col last">
-            <a href="//digi.ithome.com/labs/">评测中心</a>
-            <a href="//next.ithome.com/">智能设备</a>
-        </div>
-        <!-- 搜索 -->
-        <div class="sc">
-            <form action="//dyn.ithome.com/search" target="_blank">
-                <input type="hidden" name="s" value="10375816656400526905">
-                <input id="searchTextbox" class="focus" size="24" name="q" accesskey="s" autosave="baidu" results="8" autocomplete="off">
-                <button type="button" name="sa" onclick='location.href="//dyn.ithome.com/search/adt_all_"+ $("#searchTextbox").val() +"_0.html";'>搜索</button>
-            </form>
-            <div class="extra_sc">
-                精准搜索请尝试：<a href="http://dyn.ithome.com/search/" target="_blank" class="js" title="精确搜索">精确搜索</a>
-            </div>
-        </div>
-    </div>
-
-            <div id="tt50">
-                <div id="hl-toutiao">
-                </div>
-            </div>
-        <script src="//img.ithome.com/file/js/money/pc/content1.js"></script>
-<script>
-    if (location.host === "www.ithome.com" || location.host === "lapin.ithome.com") document.domain = "ithome.com";
+//	4. Mailchimp signup form Setting
+// No need to change if you are using Ghost version 2.0.0 or above and using ghost inbuilt subscriber feature
+// Keep it as it is, there will be no problem
+var mailchimp_form_url = 'https://androidweekly.us9.list-manage.com/subscribe?u=3f24a71686f577759d1824501&id=013e702756';
+var success_message = "Please check your inbox and confirm your email address. Thanks!";
 </script>
-
-        <div id="con">
-            <div id="wrapper">
-                <div class="content fl" id="leftcontent">
-                    <div class="it_focus ball">
-                        <span class="top_icon"></span>
-                        <div class="focus1">
-                        <h2><a href="https://www.ithome.com/bibei/" target="_blank">Win10下载 | Win7下载 | 装机必备软件下载</a></h2>
-<span>[ <a href="https://www.ithome.com/html/it/213897.htm">辣品！辣品！辣品！</a> ]</span>
-                        </div>
-                        <div class="cl"></div>
-                    </div>
-                    <div id="loading" style="display:none;width:630px;padding-bottom:15px;text-align:center;" >
-                        <img src="//img.ithome.com/file/images/loadingAnimation.gif" />
-                    </div>
-                    <div class="cate_list">
-                        <ul class="ulcl">
-                            
-                                    <li>
-                                        <a href="https://www.ithome.com/0/418/658.htm" target="_blank" class="list_thumbnail">
-                                            <img src="//img.ithome.com/newsuploadfiles/thumbnail/2019/4/418658_240.jpg">
-                                        </a>
-                                        <div class="block">
-                                            <h2>
-                                                <a href="https://www.ithome.com/0/418/658.htm" target="_blank">称服务器进水导致源代码丢失，软件公司起诉物业索赔七百万</a><span class="state tody">今日 14:32</span></h2>
-                                            <div class="memo">
-                                                <p>因认为北京某物业管理有限责任公司未尽妥善管理义务,导致机房出现冒水事故，北京某信息技术有限公司以侵权纠纷为由，将该物业管理有限责任公司及出租方北京某投资管理有限公司诉至法院</p>
-                                            </div>
-                                            
-                                        </div>
-                                    </li>
-                                
-                                    <li>
-                                        <a href="https://www.ithome.com/0/418/657.htm" target="_blank" class="list_thumbnail">
-                                            <img src="//img.ithome.com/newsuploadfiles/thumbnail/2019/4/418657_240.jpg">
-                                        </a>
-                                        <div class="block">
-                                            <h2>
-                                                <a href="https://www.ithome.com/0/418/657.htm" target="_blank">教育部：不得以国学为名传授三从四德</a><span class="state tody">今日 14:30</span></h2>
-                                            <div class="memo">
-                                                <p>教育部发布《教育部办公厅关于印发<禁止妨碍义务教育实施的若干规定>的通知》（以下简称《通知》），《通知》中明确表示，不得以国学为名传授三从四德。</p>
-                                            </div>
-                                            
-                                        </div>
-                                    </li>
-                                
-                                    <li>
-                                        <a href="https://www.ithome.com/0/418/656.htm" target="_blank" class="list_thumbnail">
-                                            <img src="//img.ithome.com/newsuploadfiles/thumbnail/2019/4/418656_240.jpg">
-                                        </a>
-                                        <div class="block">
-                                            <h2>
-                                                <a href="https://www.ithome.com/0/418/656.htm" target="_blank">三星称已向韩国运营商提供超5万个5G基站</a><span class="state tody">今日 14:24</span></h2>
-                                            <div class="memo">
-                                                <p>据韩联社报道，三星电子本周三表示，该公司在韩国市场提供了最大份额的5G网络解决方案，使其成为该国领先的5G网络供应商。</p>
-                                            </div>
-                                            
-                                        </div>
-                                    </li>
-                                
-                                    <li>
-                                        <a href="https://www.ithome.com/0/418/654.htm" target="_blank" class="list_thumbnail">
-                                            <img src="//img.ithome.com/newsuploadfiles/thumbnail/2019/4/418654_240.jpg">
-                                        </a>
-                                        <div class="block">
-                                            <h2>
-                                                <a href="https://www.ithome.com/0/418/654.htm" target="_blank">华为MateBook E 2019上架华为商城：高通850加持</a><span class="state tody">今日 14:19</span></h2>
-                                            <div class="memo">
-                                                <p>华为MateBook E 2019二合一笔记本电脑上架华为商城，根据商城信息显示，这款设备搭载高通850移动计算平台。
-
-</p>
-                                            </div>
-                                            
-                                        </div>
-                                    </li>
-                                
-                                    <li>
-                                        <a href="https://www.ithome.com/0/418/652.htm" target="_blank" class="list_thumbnail">
-                                            <img src="//img.ithome.com/newsuploadfiles/thumbnail/2019/4/418652_240.jpg">
-                                        </a>
-                                        <div class="block">
-                                            <h2>
-                                                <a href="https://www.ithome.com/0/418/652.htm" target="_blank">苹果真的会从华为购买5G调制解调器吗？</a><span class="state tody">今日 14:02</span></h2>
-                                            <div class="memo">
-                                                <p>苹果的5G情况看起来很黯淡，但它真的会从其顶级竞争对手之一购买芯片吗</p>
-                                            </div>
-                                            
-                                        </div>
-                                    </li>
-                                
-                                    <li>
-                                        <a href="https://www.ithome.com/0/418/651.htm" target="_blank" class="list_thumbnail">
-                                            <img src="//img.ithome.com/newsuploadfiles/thumbnail/2019/4/418651_240.jpg">
-                                        </a>
-                                        <div class="block">
-                                            <h2>
-                                                <a href="https://www.ithome.com/0/418/651.htm" target="_blank">中科院院士解答黑洞照片版权归属：全世界都可使用</a><span class="state tody">今日 14:00</span></h2>
-                                            <div class="memo">
-                                                <p>本月10日，人类第一次公布了黑洞照片，这张照片花了两年时间冲洗出来，可今天有网友发现，在视觉中国图片版权库中，这张图片被视觉中国拿下国内版权，对此中科院院士表示，黑洞照片全世界都可用</p>
-                                            </div>
-                                            
-                                        </div>
-                                    </li>
-                                
-                                    <li>
-                                        <a href="https://lapin.ithome.com/html/digi/418648.htm" target="_blank" class="list_thumbnail">
-                                            <img src="//img.ithome.com/newsuploadfiles/thumbnail/2019/4/418648_240.jpg">
-                                        </a>
-                                        <div class="block">
-                                            <h2>
-                                                <a href="https://lapin.ithome.com/html/digi/418648.htm" target="_blank">32.5%鲜鸡蛋/三重优惠，来伊份旗舰店轻烘焙蛋糕3盒26.8元（立减33元）</a><span class="state tody">今日 13:46</span></h2>
-                                            <div class="memo">
-                                                <p>【第2件9.9元，第3件0元】匠心18年呈现高品质平价零食，限量下单，服务消费者超过5亿人次，内含2小袋，奶香浓郁，松软诱人~【赠运费险】</p>
-                                            </div>
-                                            <div><img src=//img.ithome.com/images/42.png width=25></div>
-                                        </div>
-                                    </li>
-                                
-                                    <li>
-                                        <a href="https://www.ithome.com/0/418/650.htm" target="_blank" class="list_thumbnail">
-                                            <img src="//img.ithome.com/newsuploadfiles/thumbnail/2019/4/418650_240.jpg">
-                                        </a>
-                                        <div class="block">
-                                            <h2>
-                                                <a href="https://www.ithome.com/0/418/650.htm" target="_blank">视觉中国创始人柴继军：人类首张黑洞照片版权归属欧洲南方天文台</a><span class="state tody">今日 13:50</span></h2>
-                                            <div class="memo">
-                                                <p>据腾讯新闻报道，视觉中国创始人柴继军对此称，“用此图蹭个热点用于公司广告等商业目的有风险”。柴继军解释，任何一张照片都有版权，举决于版权人希望这张照片如何使用。就黑洞这张照片，版权归属于欧洲南方天文台</p>
-                                            </div>
-                                            
-                                        </div>
-                                    </li>
-                                
-                                    <li>
-                                        <a href="https://www.ithome.com/0/418/646.htm" target="_blank" class="list_thumbnail">
-                                            <img src="//img.ithome.com/newsuploadfiles/thumbnail/2019/4/418646_240.jpg">
-                                        </a>
-                                        <div class="block">
-                                            <h2>
-                                                <a href="https://www.ithome.com/0/418/646.htm" target="_blank">庆祝小米9系列出货超150万台，官方推雷军定制版手机壳</a><span class="state tody">今日 13:18</span></h2>
-                                            <div class="memo">
-                                                <p> 为庆祝庆祝小米9系列出货超150万台，小米官方将专门推出小米9@雷军 定制版手机壳。不止有雷军定制版手机壳，还有其它一些小米联合创始人的定制手机壳，例如林斌、王川、王腾，还有米粉的</p>
-                                            </div>
-                                            
-                                        </div>
-                                    </li>
-                                
-                                    <li>
-                                        <a href="https://www.ithome.com/0/418/645.htm" target="_blank" class="list_thumbnail">
-                                            <img src="//img.ithome.com/newsuploadfiles/thumbnail/2019/4/418645_240.jpg">
-                                        </a>
-                                        <div class="block">
-                                            <h2>
-                                                <a href="https://www.ithome.com/0/418/645.htm" target="_blank">法拉第未来首次展示车联交互功能：贾跃亭语音指令秀英文</a><span class="state tody">今日 12:57</span></h2>
-                                            <div class="memo">
-                                                <p>@贾跃亭 在其微博上发布了一段视频，展示了法拉第未来FF 91的车载语音交互功能，其中的英文指令是由贾跃亭本人完成的，这是FF 91在CES对外发布之后首次展示智能车联功能</p>
-                                            </div>
-                                            
-                                        </div>
-                                    </li>
-                                
-                                    <li>
-                                        <a href="https://www.ithome.com/0/418/644.htm" target="_blank" class="list_thumbnail">
-                                            <img src="//img.ithome.com/newsuploadfiles/thumbnail/2019/4/418644_240.jpg">
-                                        </a>
-                                        <div class="block">
-                                            <h2>
-                                                <a href="https://www.ithome.com/0/418/644.htm" target="_blank">饿了么回应品牌植入上海试卷传言：和出题人没有任何形式接触</a><span class="state tody">今日 12:50</span></h2>
-                                            <div class="memo">
-                                                <p>近日，上海一份语文试卷因出现大量与“饿了么”订餐平台有关的题目在网上传播开来，网友质疑该试卷涉嫌广告植入。据澎湃新闻报道，对此@饿了么 方面回应称，没有和教育部门和出题专家有过任何形式的接触</p>
-                                            </div>
-                                            
-                                        </div>
-                                    </li>
-                                
-                                    <li>
-                                        <a href="https://www.ithome.com/0/418/643.htm" target="_blank" class="list_thumbnail">
-                                            <img src="//img.ithome.com/newsuploadfiles/thumbnail/2019/4/418643_240.jpg">
-                                        </a>
-                                        <div class="block">
-                                            <h2>
-                                                <a href="https://www.ithome.com/0/418/643.htm" target="_blank">视觉中国想靠世界第一张黑洞照片捞一笔？官方回应</a><span class="state tody">今日 12:22</span></h2>
-                                            <div class="memo">
-                                                <p>视觉中国靠世界第一张黑洞照片捞一笔？视觉中国对此回应称：“这图片是该研究机构向全世界大批量分发的，我们没有得到独家授权。”他们没有权利、也不会去维护这张图片的使用权</p>
-                                            </div>
-                                            
-                                        </div>
-                                    </li>
-                                
-                                    <li>
-                                        <a href="https://www.ithome.com/0/418/642.htm" target="_blank" class="list_thumbnail">
-                                            <img src="//img.ithome.com/newsuploadfiles/thumbnail/2019/4/418642_240.jpg">
-                                        </a>
-                                        <div class="block">
-                                            <h2>
-                                                <a href="https://www.ithome.com/0/418/642.htm" target="_blank">最新研究：狗狗闻出人类肺癌的准确率达97%</a><span class="state tody">今日 12:02</span></h2>
-                                            <div class="memo">
-                                                <p>一项最新发布的研究报告称，在科学实验中，嗅觉超敏感的犬类鼻子能够以97%的准确度闻出人体血液样本中的肺癌血液。报道称，研究人员在实验中发现，四只两岁的小猎犬中的三只，能正确地鉴定出带有肺癌样本的血液，成功率为96.7%</p>
-                                            </div>
-                                            
-                                        </div>
-                                    </li>
-                                
-                                    <li>
-                                        <a href="https://lapin.ithome.com/html/digi/418634.htm" target="_blank" class="list_thumbnail">
-                                            <img src="//img.ithome.com/newsuploadfiles/thumbnail/2019/4/418634_240.jpg">
-                                        </a>
-                                        <div class="block">
-                                            <h2>
-                                                <a href="https://lapin.ithome.com/html/digi/418634.htm" target="_blank">100MB/s读写+10年换新，闪迪至尊高速内存卡19.9元起（赠读卡器）</a><span class="state tody">今日 11:06</span></h2>
-                                            <div class="memo">
-                                                <p>闪迪64G内存卡，一卡多用，高速存储，兼容行车记录仪、手机。</p>
-                                            </div>
-                                            <div><img src=//img.ithome.com/images/42.png width=25></div>
-                                        </div>
-                                    </li>
-                                
-                                    <li>
-                                        <a href="https://www.ithome.com/0/418/641.htm" target="_blank" class="list_thumbnail">
-                                            <img src="//img.ithome.com/newsuploadfiles/thumbnail/2019/4/418641_240.jpg">
-                                        </a>
-                                        <div class="block">
-                                            <h2>
-                                                <a href="https://www.ithome.com/0/418/641.htm" target="_blank">2019 Q1全球PC出货量：Gartner和IDC给出了不同的排名</a><span class="state tody">今日 11:42</span></h2>
-                                            <div class="memo">
-                                                <p>根据研究公司Gartner和IDC的数据，PC市场仍在下滑。巧合的是，他们给出的2019年第一季度PC出货量的数据完全相同，为5850万，不过到具体厂商的排名就不一致了</p>
-                                            </div>
-                                            
-                                        </div>
-                                    </li>
-                                
-                                    <li>
-                                        <a href="https://www.ithome.com/0/418/640.htm" target="_blank" class="list_thumbnail">
-                                            <img src="//img.ithome.com/newsuploadfiles/thumbnail/2019/4/418640_240.jpg">
-                                        </a>
-                                        <div class="block">
-                                            <h2>
-                                                <a href="https://www.ithome.com/0/418/640.htm" target="_blank">大风警告！SpaceX又推迟猎鹰重型火箭首次商业发射时间</a><span class="state tody">今日 11:40</span></h2>
-                                            <div class="memo">
-                                                <p>据外媒The Verge报道，SpaceX公司原计划在当地时间本周三（10日）进行猎鹰重型火箭的首次商业发射，但由于发射场附近出现强风，导致这次发射任务被推迟到当地时间本周四（11日）进行</p>
-                                            </div>
-                                            
-                                        </div>
-                                    </li>
-                                
-                                    <li>
-                                        <a href="https://www.ithome.com/0/418/632.htm" target="_blank" class="list_thumbnail">
-                                            <img src="//img.ithome.com/newsuploadfiles/thumbnail/2019/4/418632_240.jpg">
-                                        </a>
-                                        <div class="block">
-                                            <h2>
-                                                <a href="https://www.ithome.com/0/418/632.htm" target="_blank">华为P30系列京东补货：100元预定，今晚18:08交尾款</a><span class="state tody">今日 10:44</span></h2>
-                                            <div class="memo">
-                                                <p> 华为P30系列新机京东刚刚再补货，现支持100元预定。</p>
-                                            </div>
-                                            
-                                        </div>
-                                    </li>
-                                
-                                    <li>
-                                        <a href="https://www.ithome.com/0/418/638.htm" target="_blank" class="list_thumbnail">
-                                            <img src="//img.ithome.com/newsuploadfiles/thumbnail/2019/4/418638_240.jpg">
-                                        </a>
-                                        <div class="block">
-                                            <h2>
-                                                <a href="https://www.ithome.com/0/418/638.htm" target="_blank">亚马逊被曝有数千员工在全球监听用户与Alexa对话</a><span class="state tody">今日 11:24</span></h2>
-                                            <div class="memo">
-                                                <p>据彭博社报道，多名知情人士透露，亚马逊在全球雇佣有数千名员工，以帮助改进为其Echo智能音箱提供支持的数字助手Alexa。这些研究人员被曝可在Echo主人家里和办公室里监听他们的对话，并进行录音</p>
-                                            </div>
-                                            
-                                        </div>
-                                    </li>
-                                
-                                    <li>
-                                        <a href="https://www.ithome.com/0/418/637.htm" target="_blank" class="list_thumbnail">
-                                            <img src="//img.ithome.com/newsuploadfiles/thumbnail/2019/4/418637_240.jpg">
-                                        </a>
-                                        <div class="block">
-                                            <h2>
-                                                <a href="https://www.ithome.com/0/418/637.htm" target="_blank">显卡频率高达1.8GHz？PS5/Xbox猩红APU代码疑似泄露</a><span class="state tody">今日 11:18</span></h2>
-                                            <div class="memo">
-                                                <p>此前，AMD的一款APU代码公布，这段代码是2G16002CE8JA2_32/10/10_13E9。这次公布的新代码是ZG16702AE8JB2_32/10/18_13F8，开头的“Z”意味着这款芯片已经要进入投产阶段，很有可能用在Xbox猩红上</p>
-                                            </div>
-                                            
-                                        </div>
-                                    </li>
-                                
-                                    <li>
-                                        <a href="https://www.ithome.com/0/418/631.htm" target="_blank" class="list_thumbnail">
-                                            <img src="//img.ithome.com/newsuploadfiles/thumbnail/2019/4/418631_240.jpg">
-                                        </a>
-                                        <div class="block">
-                                            <h2>
-                                                <a href="https://www.ithome.com/0/418/631.htm" target="_blank">谷歌地图尝试加广告：有望成为新一代“印钞机”业务</a><span class="state tody">今日 10:41</span></h2>
-                                            <div class="memo">
-                                                <p>据彭博社报道，谷歌目前正在探索变现地图服务。此前谷歌凭借其搜索广告业务成为了世界上赢利最高的互联网企业。如今，他们要将自己的另外一个服务也变成“大型印钞机”</p>
-                                            </div>
-                                            
-                                        </div>
-                                    </li>
-                                
-                                    <li>
-                                        <a href="https://lapin.ithome.com/html/digi/418590.htm" target="_blank" class="list_thumbnail">
-                                            <img src="//img.ithome.com/newsuploadfiles/thumbnail/2019/4/418590_240.jpg">
-                                        </a>
-                                        <div class="block">
-                                            <h2>
-                                                <a href="https://lapin.ithome.com/html/digi/418590.htm" target="_blank">京东TOPSPORTS超级品牌日：耐克/AJ秒杀叠券不只5折，活动仅此1天</a><span class="state other">04月10日</span></h2>
-                                            <div class="memo">
-                                                <p>京东TOPSPORTS官方旗舰店11日0点开启超级秒杀活动，全场秒杀不止5折，活动仅此1天。热门跑鞋、休闲运动鞋、篮球鞋、运动服饰及配件等品类都参加活动，折上还能叠加店铺优惠券+平台优惠券</p>
-                                            </div>
-                                            <div><img src=//img.ithome.com/images/42.png width=25></div>
-                                        </div>
-                                    </li>
-                                
-                                    <li>
-                                        <a href="https://www.ithome.com/0/418/630.htm" target="_blank" class="list_thumbnail">
-                                            <img src="//img.ithome.com/newsuploadfiles/thumbnail/2019/4/418630_240.jpg">
-                                        </a>
-                                        <div class="block">
-                                            <h2>
-                                                <a href="https://www.ithome.com/0/418/630.htm" target="_blank">人类首张黑洞照片发布，被网友玩坏了</a><span class="state tody">今日 10:37</span></h2>
-                                            <div class="memo">
-                                                <p>北京时间4月10日晚9点，人类首张黑洞照片在全球六地的视界面望远镜发布会上同步发布，但画风很快就变了。由于这张黑洞的照片实在是跟很多我们日常见到的东西很像，网友表示控制不住自己的手</p>
-                                            </div>
-                                            
-                                        </div>
-                                    </li>
-                                
-                                    <li>
-                                        <a href="https://www.ithome.com/0/418/628.htm" target="_blank" class="list_thumbnail">
-                                            <img src="//img.ithome.com/newsuploadfiles/thumbnail/2019/4/418628_240.jpg">
-                                        </a>
-                                        <div class="block">
-                                            <h2>
-                                                <a href="https://www.ithome.com/0/418/628.htm" target="_blank">英特尔正式推出傲腾 H10：又快又大又便宜的固态来了</a><span class="state tody">今日 10:27</span></h2>
-                                            <div class="memo">
-                                                <p>英特尔今天宣布其新的Optane Memory H10固态硬盘将从2019年季度Q2开始供应给OEM笔记本电脑，未来还将提供给DIY产品市场。这款新型SSD将Optane内存与QLC闪存结合在一个M.2 PCB上，将Optane的速度与QLC闪存的大容量和低价格结合在了一起。</p>
-                                            </div>
-                                            
-                                        </div>
-                                    </li>
-                                
-                                    <li>
-                                        <a href="https://www.ithome.com/0/418/626.htm" target="_blank" class="list_thumbnail">
-                                            <img src="//img.ithome.com/newsuploadfiles/thumbnail/2019/4/418626_240.jpg">
-                                        </a>
-                                        <div class="block">
-                                            <h2>
-                                                <a href="https://www.ithome.com/0/418/626.htm" target="_blank">新宾利飞驰即将登场，最大升级其实是头部小挂件？</a><span class="state tody">今日 10:25</span></h2>
-                                            <div class="memo">
-                                                <p>宾利现在也站在了百年历史的门口，如此重要的时节下，不来一款重量级车型镇场自然说不过去，最近他们就“小小”的预告了一下即将在今年登场的全新宾利飞驰，但怎么隐隐有种劳斯莱斯混血的感觉</p>
-                                            </div>
-                                            
-                                        </div>
-                                    </li>
-                                
-                                    <li>
-                                        <a href="https://www.ithome.com/0/418/625.htm" target="_blank" class="list_thumbnail">
-                                            <img src="//img.ithome.com/newsuploadfiles/thumbnail/2019/4/418625_240.jpg">
-                                        </a>
-                                        <div class="block">
-                                            <h2>
-                                                <a href="https://www.ithome.com/0/418/625.htm" target="_blank">北师大珠海分校升级为校区，原分校2021年停止招生</a><span class="state tody">今日 10:23</span></h2>
-                                            <div class="memo">
-                                                <p>日前，教育部正式发布关于同意北京师范大学珠海校区建设的批复，原北京师范大学珠海分校将在2021年停止招生，并在2024年停止办学</p>
-                                            </div>
-                                            
-                                        </div>
-                                    </li>
-                                
-                                    <li>
-                                        <a href="https://www.ithome.com/0/418/623.htm" target="_blank" class="list_thumbnail">
-                                            <img src="//img.ithome.com/newsuploadfiles/thumbnail/2019/4/418623_240.jpg">
-                                        </a>
-                                        <div class="block">
-                                            <h2>
-                                                <a href="https://www.ithome.com/0/418/623.htm" target="_blank">支付宝“相互宝”半年超5000万人加入，人均一毛救助24人</a><span class="state tody">今日 10:11</span></h2>
-                                            <div class="memo">
-                                                <p>4月10日，支付宝上的大病互助计划“相互宝”成员数超过5000万，成为全球最大的互助社群，平均每1分钟就有近200人加入。</p>
-                                            </div>
-                                            
-                                        </div>
-                                    </li>
-                                
-                                    <li>
-                                        <a href="https://www.ithome.com/0/418/621.htm" target="_blank" class="list_thumbnail">
-                                            <img src="//img.ithome.com/newsuploadfiles/thumbnail/2019/4/418621_240.jpg">
-                                        </a>
-                                        <div class="block">
-                                            <h2>
-                                                <a href="https://www.ithome.com/0/418/621.htm" target="_blank">亚马逊和微软争夺五角大楼云合同：规模达百亿美元</a><span class="state tody">今日 10:04</span></h2>
-                                            <div class="memo">
-                                                <p>据美国媒体报道，五角大楼表示，亚马逊和微软进入最后决赛，争夺美国国防部总额100亿美元的云服务合同。此声明将甲骨文和IBM从竞标中剔除</p>
-                                            </div>
-                                            
-                                        </div>
-                                    </li>
-                                
-                                    <li>
-                                        <a href="https://lapin.ithome.com/html/digi/418624.htm" target="_blank" class="list_thumbnail">
-                                            <img src="//img.ithome.com/newsuploadfiles/thumbnail/2019/4/418624_240.jpg">
-                                        </a>
-                                        <div class="block">
-                                            <h2>
-                                                <a href="https://lapin.ithome.com/html/digi/418624.htm" target="_blank">够轻够软够舒服，英国斯潘迪旗舰店19年新款巨齿鲨跑鞋209元（吊牌599元）</a><span class="state tody">今日 10:14</span></h2>
-                                            <div class="memo">
-                                                <p>够轻够软够舒服，英国斯潘迪19年新款巨齿鲨跑鞋吊牌价599元，现旗舰店大促报价309元，叠加限时限量100元券，实付209元包邮.</p>
-                                            </div>
-                                            <div><img src=//img.ithome.com/images/42.png width=25></div>
-                                        </div>
-                                    </li>
-                                
-                                    <li>
-                                        <a href="https://www.ithome.com/0/418/619.htm" target="_blank" class="list_thumbnail">
-                                            <img src="//img.ithome.com/newsuploadfiles/thumbnail/2019/4/418619_240.jpg">
-                                        </a>
-                                        <div class="block">
-                                            <h2>
-                                                <a href="https://www.ithome.com/0/418/619.htm" target="_blank">股东指控波音隐瞒737 MAX型飞机的问题</a><span class="state tody">今日 9:54</span></h2>
-                                            <div class="memo">
-                                                <p>据《华盛顿邮报》报道，美国波音公司股东理查德∙希克斯对该波音提起集体诉讼，指控其隐瞒737 MAX型飞机的问题</p>
-                                            </div>
-                                            
-                                        </div>
-                                    </li>
-                                
-                                    <li>
-                                        <a href="https://www.ithome.com/0/418/618.htm" target="_blank" class="list_thumbnail">
-                                            <img src="//img.ithome.com/newsuploadfiles/thumbnail/2019/4/418618_240.jpg">
-                                        </a>
-                                        <div class="block">
-                                            <h2>
-                                                <a href="https://www.ithome.com/0/418/618.htm" target="_blank">大三学生网上卖假苹果iPhone，还威胁买家称“报警没用”</a><span class="state tody">今日 9:51</span></h2>
-                                            <div class="memo">
-                                                <p>据看看新闻报道，南京一大三学生在二手平台卖假iPhone，被识破后态度十分嚣张，称报警也没用</p>
-                                            </div>
-                                            
-                                        </div>
-                                    </li>
-                                
-                                    <li>
-                                        <a href="https://www.ithome.com/0/418/615.htm" target="_blank" class="list_thumbnail">
-                                            <img src="//img.ithome.com/newsuploadfiles/thumbnail/2019/4/418615_240.jpg">
-                                        </a>
-                                        <div class="block">
-                                            <h2>
-                                                <a href="https://www.ithome.com/0/418/615.htm" target="_blank">罗永浩新创业方向为电子烟，品牌或命名为“小野”</a><span class="state tody">今日 9:31</span></h2>
-                                            <div class="memo">
-                                                <p>据媒体披露，锤子科技创始人罗永浩正筹备全新电子烟品牌，这个品牌的名字很有可能为“小野”，英文名称为“Yeld”</p>
-                                            </div>
-                                            
-                                        </div>
-                                    </li>
-                                
-                                    <li>
-                                        <a href="https://www.ithome.com/0/418/614.htm" target="_blank" class="list_thumbnail">
-                                            <img src="//img.ithome.com/newsuploadfiles/thumbnail/2019/4/418614_240.jpg">
-                                        </a>
-                                        <div class="block">
-                                            <h2>
-                                                <a href="https://www.ithome.com/0/418/614.htm" target="_blank">21岁女孩跳楼自杀：连续还了3年网贷，仍欠平台17万</a><span class="state tody">今日 9:28</span></h2>
-                                            <div class="memo">
-                                                <p>据@陕西都市快报 报道，2019年2月26日凌晨3点30分，在西安工作的冯先生的女儿从17楼跳下，时年21岁，而在此之前，该女孩连续还了三年网贷</p>
-                                            </div>
-                                            
-                                        </div>
-                                    </li>
-                                
-                                    <li>
-                                        <a href="https://www.ithome.com/0/418/612.htm" target="_blank" class="list_thumbnail">
-                                            <img src="//img.ithome.com/newsuploadfiles/thumbnail/2019/4/418612_240.jpg">
-                                        </a>
-                                        <div class="block">
-                                            <h2>
-                                                <a href="https://www.ithome.com/0/418/612.htm" target="_blank">研究：三分之二酒店无意中泄露客户个人信息</a><span class="state tody">今日 9:04</span></h2>
-                                            <div class="memo">
-                                                <p>据路透社报道，网络安全公司赛门铁克周三发布的最新研究显示，三分之二的酒店网站在无意中将客人的预定信息和个人数据泄露给第三方网站，包括广告公司和分析公司</p>
-                                            </div>
-                                            
-                                        </div>
-                                    </li>
-                                
-                                    <li>
-                                        <a href="https://www.ithome.com/0/418/611.htm" target="_blank" class="list_thumbnail">
-                                            <img src="//img.ithome.com/newsuploadfiles/thumbnail/2019/4/418611_240.jpg">
-                                        </a>
-                                        <div class="block">
-                                            <h2>
-                                                <a href="https://www.ithome.com/0/418/611.htm" target="_blank">涉嫌泄露机密文件，苹果要求撤销“降频门”原告律师</a><span class="state tody">今日 9:03</span></h2>
-                                            <div class="memo">
-                                                <p>本周，苹果要求法院终止两名为正在进行的一桩iPhone降频事件法律诉讼案中辩护的原告律师的辩护资格，理由是后者违反保护性法令擅自泄露机密文件</p>
-                                            </div>
-                                            
-                                        </div>
-                                    </li>
-                                
-                                    <li>
-                                        <a href="https://lapin.ithome.com/html/digi/418425.htm" target="_blank" class="list_thumbnail">
-                                            <img src="//img.ithome.com/newsuploadfiles/thumbnail/2019/4/418425_240.jpg">
-                                        </a>
-                                        <div class="block">
-                                            <h2>
-                                                <a href="https://lapin.ithome.com/html/digi/418425.htm" target="_blank">小米生态链制造商，iHealth精准电子温度计9.9元起</a><span class="state other">04月10日</span></h2>
-                                            <div class="memo">
-                                                <p>医用标准，成人儿童两用，大屏数值显示，可弯曲软头，精密贴合不滑落，测量舒适准确，不含水银，安全无隐患！</p>
-                                            </div>
-                                            <div><img src=//img.ithome.com/images/42.png width=25></div>
-                                        </div>
-                                    </li>
-                                
-                                    <li>
-                                        <a href="https://www.ithome.com/0/418/610.htm" target="_blank" class="list_thumbnail">
-                                            <img src="//img.ithome.com/newsuploadfiles/thumbnail/2019/4/418610_240.jpg">
-                                        </a>
-                                        <div class="block">
-                                            <h2>
-                                                <a href="https://www.ithome.com/0/418/610.htm" target="_blank">AKG调音+蓝牙5.0：三星Galaxy Buds无线耳机999元正式开售</a><span class="state tody">今日 8:59</span></h2>
-                                            <div class="memo">
-                                                <p>今年2月，三星推出了三星Galaxy Buds无线耳机，3月8日已在美国上市，售价为129.99美元。</p>
-                                            </div>
-                                            
-                                        </div>
-                                    </li>
-                                
-                                    <li>
-                                        <a href="https://www.ithome.com/0/418/609.htm" target="_blank" class="list_thumbnail">
-                                            <img src="//img.ithome.com/newsuploadfiles/thumbnail/2019/4/418609_240.jpg">
-                                        </a>
-                                        <div class="block">
-                                            <h2>
-                                                <a href="https://www.ithome.com/0/418/609.htm" target="_blank">iPhone销量低迷翻篇：投资者关注苹果服务业务前景</a><span class="state tody">今日 8:56</span></h2>
-                                            <div class="memo">
-                                                <p>彭博社报道称，经历2018年后，苹果又重新受到投资者的追捧，因为他们已经忘记了糟糕的iPhone销量，转而看好该公司的数字服务发展前景</p>
-                                            </div>
-                                            
-                                        </div>
-                                    </li>
-                                
-                                    <li>
-                                        <a href="https://www.ithome.com/0/418/608.htm" target="_blank" class="list_thumbnail">
-                                            <img src="//img.ithome.com/newsuploadfiles/thumbnail/2019/4/418608_240.jpg">
-                                        </a>
-                                        <div class="block">
-                                            <h2>
-                                                <a href="https://www.ithome.com/0/418/608.htm" target="_blank">当当李国庆力挺刘强东：只要董事会同意，“独裁”无可厚非</a><span class="state tody">今日 8:55</span></h2>
-                                            <div class="memo">
-                                                <p>近日，关于京东大清洗的消息层出不穷，三大CXO离职，高管轮岗、快递员公积金下调、甚至被曝出裁员......当当网创始人，原CEO李国庆在接受自媒体采访时，就大企业管理困境给出了几点看法</p>
-                                            </div>
-                                            
-                                        </div>
-                                    </li>
-                                
-                                    <li>
-                                        <a href="https://www.ithome.com/0/418/607.htm" target="_blank" class="list_thumbnail">
-                                            <img src="//img.ithome.com/newsuploadfiles/thumbnail/2019/4/418607_240.jpg">
-                                        </a>
-                                        <div class="block">
-                                            <h2>
-                                                <a href="https://www.ithome.com/0/418/607.htm" target="_blank">女子报警称家中出现入侵者，结果发现是扫地机器人</a><span class="state tody">今日 8:34</span></h2>
-                                            <div class="memo">
-                                                <p>据CNET报道，近日俄勒冈州华盛顿县的一名女子报警称有人闯入家中，警方赶到她家中后发现所谓的入侵者是一台被困在浴室内的扫地机器人，虚惊一场🤦‍♀️#年度沙雕新闻#</p>
-                                            </div>
-                                            
-                                        </div>
-                                    </li>
-                                
-                                    <li>
-                                        <a href="https://www.ithome.com/0/418/606.htm" target="_blank" class="list_thumbnail">
-                                            <img src="//img.ithome.com/newsuploadfiles/thumbnail/2019/4/418606_240.jpg">
-                                        </a>
-                                        <div class="block">
-                                            <h2>
-                                                <a href="https://www.ithome.com/0/418/606.htm" target="_blank">最新实验成功捕捉到光速，呈现光穿越的“慢动作”</a><span class="state tody">今日 8:24</span></h2>
-                                            <div class="memo">
-                                                <p>在YouTube网站发布的一段视频中，加州理工学院研究人员展示了他们的相机性能：拍摄一束激光以每秒大约1000亿帧的速度穿过一瓶水(相比之下，电影制作是以每秒24帧的速度拍摄)</p>
-                                            </div>
-                                            
-                                        </div>
-                                    </li>
-                                
-                                    <li>
-                                        <a href="https://www.ithome.com/0/418/605.htm" target="_blank" class="list_thumbnail">
-                                            <img src="//img.ithome.com/newsuploadfiles/thumbnail/2019/4/418605_240.jpg">
-                                        </a>
-                                        <div class="block">
-                                            <h2>
-                                                <a href="https://www.ithome.com/0/418/605.htm" target="_blank">熊猫直播倒掉之后：直播行业腾讯一家独大</a><span class="state tody">今日 8:23</span></h2>
-                                            <div class="memo">
-                                                <p>熊猫直播倒闭后，中国的游戏流媒体市场现在由腾讯主导。除此之外，腾讯还控制着中国视频游戏行业的许多其他领域。腾讯不仅支持斗鱼和虎牙，其在2016年还推出了自己的流媒体平台eGame</p>
-                                            </div>
-                                            
-                                        </div>
-                                    </li>
-                                
-                                    <li>
-                                        <a href="https://lapin.ithome.com/html/digi/418263.htm" target="_blank" class="list_thumbnail">
-                                            <img src="//img.ithome.com/newsuploadfiles/thumbnail/2019/4/418263_240.jpg">
-                                        </a>
-                                        <div class="block">
-                                            <h2>
-                                                <a href="https://lapin.ithome.com/html/digi/418263.htm" target="_blank">马克华菲鞋类旗舰店聚划算低至3折，春夏新品券后199元起</a><span class="state other">04月09日</span></h2>
-                                            <div class="memo">
-                                                <p>采用一体飞织工艺，轻便舒适，升级双层吸模大底，防滑耐磨，内置缓震，有黑色和灰白色可选</p>
-                                            </div>
-                                            <div><img src=//img.ithome.com/images/42.png width=25></div>
-                                        </div>
-                                    </li>
-                                
-                                    <li>
-                                        <a href="https://www.ithome.com/0/418/604.htm" target="_blank" class="list_thumbnail">
-                                            <img src="//img.ithome.com/newsuploadfiles/thumbnail/2019/4/418604_240.jpg">
-                                        </a>
-                                        <div class="block">
-                                            <h2>
-                                                <a href="https://www.ithome.com/0/418/604.htm" target="_blank"><font color='#d22222'>微软Windows 10 20H1快速预览版18875推送，中文输入法升级</font></a><span class="state tody">今日 8:21</span></h2>
-                                            <div class="memo">
-                                                <p>今天，微软向快速预览通道用户推送了Windows 10 20H1 18875更新，微软表示，目前正在将20H1版本从跳跃预览通道提前到快速预览通道，部分快速预览通道的用户会收到与跳跃预览通道相同的版本推送</p>
-                                            </div>
-                                            
-                                        </div>
-                                    </li>
-                                
-                                    <li>
-                                        <a href="https://www.ithome.com/0/418/603.htm" target="_blank" class="list_thumbnail">
-                                            <img src="//img.ithome.com/newsuploadfiles/thumbnail/2019/4/418603_240.jpg">
-                                        </a>
-                                        <div class="block">
-                                            <h2>
-                                                <a href="https://www.ithome.com/0/418/603.htm" target="_blank">全程深度解读人类首次拍摄黑洞图像！</a><span class="state tody">今日 8:10</span></h2>
-                                            <div class="memo">
-                                                <p>黑洞，终于不“黑”了！人类历史上第一次，我们拍摄到了黑洞的图像，从而首次让我们直接目睹了这种奇异宇宙天体的外观画面。最新的黑洞图像令人震撼。但科学家们指出，这项工作更大的意义是它将对未来科学所产生的深远影响</p>
-                                            </div>
-                                            
-                                        </div>
-                                    </li>
-                                
-                                    <li>
-                                        <a href="https://www.ithome.com/0/418/602.htm" target="_blank" class="list_thumbnail">
-                                            <img src="//img.ithome.com/newsuploadfiles/thumbnail/2019/4/418602_240.jpg">
-                                        </a>
-                                        <div class="block">
-                                            <h2>
-                                                <a href="https://www.ithome.com/0/418/602.htm" target="_blank">谷歌宣布：安卓手机现可充当物理安全密钥</a><span class="state tody">今日 7:52</span></h2>
-                                            <div class="memo">
-                                                <p>谷歌今天宣布，任何运行Android 7或更高版本操作系统的手机，现在都可以充当两步验证机制的物理安全密钥</p>
-                                            </div>
-                                            
-                                        </div>
-                                    </li>
-                                
-                                    <li>
-                                        <a href="https://www.ithome.com/0/418/601.htm" target="_blank" class="list_thumbnail">
-                                            <img src="//img.ithome.com/newsuploadfiles/thumbnail/2019/4/418601_240.jpg">
-                                        </a>
-                                        <div class="block">
-                                            <h2>
-                                                <a href="https://www.ithome.com/0/418/601.htm" target="_blank">韩国已有10万用户尝鲜5G，延迟在5ms以下</a><span class="state tody">今日 7:42</span></h2>
-                                            <div class="memo">
-                                                <p>据第一财经报道，据韩国三大运营商提供的数据，截至9日，韩国三大运营商使用5G费率套餐的用户超过10万户，占韩国境内的移动电话入网用户数的2%，这比韩国推出4G服务时的用户增速快了近10倍</p>
-                                            </div>
-                                            
-                                        </div>
-                                    </li>
-                                
-                                    <li>
-                                        <a href="https://www.ithome.com/0/418/600.htm" target="_blank" class="list_thumbnail">
-                                            <img src="//img.ithome.com/newsuploadfiles/thumbnail/2019/4/418600_240.jpg">
-                                        </a>
-                                        <div class="block">
-                                            <h2>
-                                                <a href="https://www.ithome.com/0/418/600.htm" target="_blank">罗玉凤微博提罗永浩：发现我哥人气远不如我</a><span class="state tody">今日 7:42</span></h2>
-                                            <div class="memo">
-                                                <p>日前，罗玉凤“凤姐”发文称，“关注了我哥罗永浩一段时间，发现他的人气远不如我。”作为锤子科技的CEO，罗永浩从去年年底开始就已经成为了一个“冷漠”的“微博转发机”</p>
-                                            </div>
-                                            
-                                        </div>
-                                    </li>
-                                
-                                    <li>
-                                        <a href="https://www.ithome.com/0/418/599.htm" target="_blank" class="list_thumbnail">
-                                            <img src="//img.ithome.com/newsuploadfiles/thumbnail/2019/4/418599_240.jpg">
-                                        </a>
-                                        <div class="block">
-                                            <h2>
-                                                <a href="https://www.ithome.com/0/418/599.htm" target="_blank">被批歧视穷人，亚马逊无人商店将开始接受现金</a><span class="state tody">今日 7:29</span></h2>
-                                            <div class="memo">
-                                                <p>据美国媒体报道，亚马逊的无人商店Amazon Go将开始接受现金，因为越来越多的人批评该公司正在歧视那些没有银行账户的低收入者</p>
-                                            </div>
-                                            
-                                        </div>
-                                    </li>
-                                
-                                    <li>
-                                        <a href="https://lapin.ithome.com/html/digi/418442.htm" target="_blank" class="list_thumbnail">
-                                            <img src="//img.ithome.com/newsuploadfiles/thumbnail/2019/4/418442_240.jpg">
-                                        </a>
-                                        <div class="block">
-                                            <h2>
-                                                <a href="https://lapin.ithome.com/html/digi/418442.htm" target="_blank">买1送1，恒源祥男女纯棉圆领短袖T恤2件39元（30元券）</a><span class="state other">04月10日</span></h2>
-                                            <div class="memo">
-                                                <p>【拍2件只要39元！100%专柜正品】100%纯棉一等品材质短袖T恤，精选舒适优质棉，简约时尚印花，舒适不紧绷，面料柔软，吸汗透气，外穿、内搭完美彰显男士气质，买大牌送爱人【赠运费险】</p>
-                                            </div>
-                                            <div><img src=//img.ithome.com/images/42.png width=25></div>
-                                        </div>
-                                    </li>
-                                
-                                    <li>
-                                        <a href="https://www.ithome.com/0/418/598.htm" target="_blank" class="list_thumbnail">
-                                            <img src="//img.ithome.com/newsuploadfiles/thumbnail/2019/4/418598_240.jpg">
-                                        </a>
-                                        <div class="block">
-                                            <h2>
-                                                <a href="https://www.ithome.com/0/418/598.htm" target="_blank">其实科学家们给两个黑洞拍了照片，但只有一张“洗”出来了</a><span class="state tody">今日 7:13</span></h2>
-                                            <div class="memo">
-                                                <p>其实，在2017年4月，“事件视界望远镜”项目（EHT）中的8台望远镜选定的观测目标有两个，另一个正是我们银河系的中心黑洞。为什么这次反而没有看到银河系中心黑洞的照片呢？中科院上海天文台副台长袁峰称，给银河系中心黑洞“洗照片”存在更多技术上的困难</p>
-                                            </div>
-                                            
-                                        </div>
-                                    </li>
-                                
-                        </ul>
-                    </div>
-
-                <div class="page_nav"><span class="page_num"><a href='javascript:;'><</a><span class="current">1</span> <a href="#" onclick="javascript:page(2)">2</a> <a href="#" onclick="javascript:page(3)">3</a> <a href="#" onclick="javascript:page(4)">4</a> <a href="#" onclick="javascript:page(5)">5</a> <a href="#" onclick="javascript:page(6)">6</a> <a href="#" onclick="javascript:page(7)">7</a> <a href="#" onclick="javascript:page(8)">8</a> <a href="#" onclick="javascript:page(9)">9</a> <a href="#" onclick="javascript:page(10)">10</a> <a href="#" onclick="javascript:page(11)">11</a> <a href="#" onclick="javascript:page(12)">12</a> <a href="#" onclick="javascript:page(13)">13</a> <a href="#" onclick="javascript:page(14)">14</a><a href="#" onclick="javascript:page(2)">></a></span>   </div>
-
-                </div>
-
-                <div class="sidebar">
-                    <ul>
-                        <li class="sb_list">
-                            <div class="bx adblock">
-                                 
-                            </div>
-                        </li>
-                        <li class="sb_list">
-                            <div class="bx">
-                                <!-- 广告位：IT之家内容页 边栏 300*250 位置3 -->
-<script>
-(function() {
-    var s = "_" + Math.random().toString(36).slice(2);
-    document.write('<div id="' + s + '"></div>');
-    (window.slotbydup=window.slotbydup || []).push({
-        id: '1005739',
-        container: s,
-        size: '300,250',
-        display: 'inlay-fix'
-    });
-})();
-</script>
-                            </div>
-                        </li>
-                        <li class="sb_list">
-                            <iframe src="//www.ithome.com/block/topnews.htm" scrolling="no" marginwidth="0" marginheight="0" frameborder="0"  class="hotnews"></iframe>
-                        </li>
-
-                    </ul>
-                      <ul id="crf1">
-                        <li class="sb_list">
-                            <div class="bx">
-                                                                  <script type="text/javascript">
-                                    var cpro_id = "u2063380";
-                                    (window["cproStyleApi"] = window["cproStyleApi"] || {})[cpro_id] = { at: "3", rsi0: "300", rsi1: "300", pat: "6", tn: "baiduCustNativeAD", rss1: "#FFFFFF", conBW: "1", adp: "1", ptt: "0", titFF: "%E5%BE%AE%E8%BD%AF%E9%9B%85%E9%BB%91", titFS: "14", rss2: "#000000", titSU: "0", ptbg: "90", piw: "0", pih: "0", ptp: "0" }
-                                </script>
-
-                                <script src="//cpro.baidustatic.com/cpro/ui/c.js" type="text/javascript"></script>
-                            </div>
-                        </li>
-                        <li class="sb_list">
-                            <div class="bx">
-                                <!-- 广告位：IT之家 内容页 右悬浮下 -->
-<script>
-(function() {
-    var s = "_" + Math.random().toString(36).slice(2);
-    document.write('<div id="' + s + '"></div>');
-    (window.slotbydup=window.slotbydup || []).push({
-        id: '2723650',
-        container: s,
-        size: '300,250',
-        display: 'inlay-fix'
-    });
-})();
-</script>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        
-<div id="ft"> 
-  <!-- 链接 -->
-  <div class="lk pre1">
-    <div class="bx1">
-            <p>
-                <strong>
-                    <a href="//www.ruanmei.com/">软媒旗下网站</a>：
-                </strong><span class="link">
-                    <a href="//www.ithome.com/" target="_blank">IT之家</a><span class="v">|</span>
-                    <a href="//www.lapin365.com/" target="_blank">辣品 - 超值导购，优惠券</a><span class="v">|</span>
-                    <a href="//quan.ithome.com/" target="_blank">IT圈（Win10/WP8.1/Win7论坛）</a><span class="v">|</span>
-                    <a href="http://www.6655.com/" target="_blank" class="wz">6655网址之家</a><span class="v">|</span>
-                    <a href="//win10.ithome.com/" target="_blank">Win10之家</a><span class="v">|</span>
-                    <a href="//www.win8china.com/" target="_blank">Win8之家</a><span class="v">|</span>
-                    <a href="//www.win7china.com/" target="_blank">Win7之家</a><span class="v">|</span>
-                    <a href="http://www.vista123.com/" target="_blank">Vista之家</a>
-                </span>
-            </p>
-            <p>
-                <strong>软媒旗下软件：</strong><span class="link">
-                    <a href="//mofang.ruanmei.com/" target="_blank">魔方</a><span class="v">|</span>
-                    <a href="//qiyu.ruanmei.com/" target="_blank">旗鱼浏览器（极速内核）</a><span class="v">|</span>
-                    <a href="//sj.ruanmei.com/" target="_blank">软媒时间</a><span class="v">|</span>
-                    <a href="http://www.cooldock.com/" target="_blank">酷点桌面</a><span class="v">|</span>
-                    <a href="http://www.saayaa.com/" target="_blank">闪游浏览器（IE内核）</a><span class="v">|</span>
-                    <a href="//www.win7china.com/windows7master/" target="_blank">Win7优化大师</a><span class="v">|</span>
-                    <a href="//www.win8china.com/windows8master/" target="_blank">Win8优化大师</a><span class="v">|</span>
-                    <a href="//win10.ithome.com/windows10master/" target="_blank">Win10优化大师</a><span class="v">|</span>
-                    <a href="//m.ruanmei.com/" target="_blank">软媒手机APP应用</a>
-                </span>
-            </p>
-    </div>
+    <meta name="description" content="Write the code, Change the world" />
+    <link rel="shortcut icon" href="/favicon.png" type="image/png" />
+    <link rel="canonical" href="https://androidweekly.io/" />
+    <meta name="referrer" content="no-referrer-when-downgrade" />
+    <link rel="next" href="https://androidweekly.io/page/2/" />
     
-  </div>
-  <!-- 页脚 -->
-  <div class="if">
-    <div class="bx1"><a href="//www.ithome.com/about.htm" target="_blank"><strong>关于IT之家</strong></a><span class="v">|</span><a href="//www.ruanmei.com/aboutus/" target="_blank"><strong>关于软媒</strong></a><span class="v">|</span><a href="//www.ruanmei.com/contact/" target="_blank"><strong>联系我们</strong></a><span class="v">|</span><a href="//www.ruanmei.com/joinus/" target="_blank"><strong>加入软媒</strong></a><span class="v">|</span><a href="//m.ithome.com/" target="_blank"><strong>WAP版</strong></a><span class="v">|</span><a href="//www.ithome.com/sitemap/" target="_blank"><strong>网站地图</strong></a><span class="v">|</span>
-        <a href="//www.ithome.com/archiver/" target="_blank"><strong>Archiver</strong></a><span class="v">|</span>
-        <a href="http://www.cike.cn/" target="_blank"><strong>刺客团队</strong></a></div>
-    <div class="bx2">
-      <p>IT之家，软媒旗下科技门户网站 - 爱科技，爱这里。</p>
-      <p>Copyright (C) <a href="//www.ruanmei.com" target="_blank">RuanMei.com</a>, All Rights Reserved.</p>
-      <p><a href="//www.ruanmei.com/" target="_blank">软媒公司</a> 版权所有 <script>document.write('<a href="http://www.miitbeian.gov.cn" target="_blank" rel ="nofollow">鲁ICP备11016544号-10</a>')</script></p>
-    </div>
-  </div>
-</div>
-<script src="https://cdn.jsdelivr.net/npm/jquery@2.1.1/dist/jquery.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/jquery.cookie@1.4.1/jquery.cookie.min.js"></script>
-<script src="//img.ithome.com/file/js/jquery.lazyload.js"></script>
-<script src="//img.ithome.com/file/js/v2.3/top.js?r=2017021312"></script>
-<script src="//img.ithome.com/file/js/jquery/popwin.js?r=2018071003"></script>
-<script src="//img.ithome.com/file/js/v2.3/common.js?r=2018071302"></script>
-<script type="text/javascript" src="//img.ithome.com/file/js/v2/tt.js"></script>
-<script type="text/javascript" charset="utf-8">     $(function () {
-         $("img.lazy").lazyload();
-     });
-</script>
-<div style="display:none">
+    <meta property="og:site_name" content="Android 开发技术周报" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Android 开发技术周报" />
+    <meta property="og:description" content="Write the code, Change the world" />
+    <meta property="og:url" content="https://androidweekly.io/" />
+    <meta property="og:image" content="https://androidweekly.io/content/images/2018/11/home_cover.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Android 开发技术周报" />
+    <meta name="twitter:description" content="Write the code, Change the world" />
+    <meta name="twitter:url" content="https://androidweekly.io/" />
+    <meta name="twitter:image" content="https://androidweekly.io/content/images/2018/11/home_cover.jpg" />
+    <meta name="twitter:site" content="@inferjay" />
+    <meta property="og:image:width" content="1920" />
+    <meta property="og:image:height" content="600" />
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "publisher": {
+        "@type": "Organization",
+        "name": "Android 开发技术周报",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://androidweekly.io/content/images/2018/01/apple-touch-icon-114x114.png",
+            "width": 60,
+            "height": 60
+        }
+    },
+    "url": "https://androidweekly.io/",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://androidweekly.io/content/images/2018/11/home_cover.jpg",
+        "width": 1920,
+        "height": 600
+    },
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://androidweekly.io/"
+    },
+    "description": "Write the code, Change the world"
+}
+    </script>
+
+    <script src="/public/ghost-sdk.min.js?v=775cc42b9a"></script>
 <script>
-var _hmt = _hmt || [];
-(function() {
-  var hm = document.createElement("script");
-  hm.src = "https://hm.baidu.com/hm.js?cfebe79b2c367c4b89b285f412bf9867";
-  var s = document.getElementsByTagName("script")[0]; 
-  s.parentNode.insertBefore(hm, s);
-})();
+ghost.init({
+	clientId: "ghost-frontend",
+	clientSecret: "6839f718fef8"
+});
 </script>
+    <meta name="generator" content="Ghost 2.1" />
+    <link rel="alternate" type="application/rss+xml" title="Android 开发技术周报" href="https://androidweekly.io/rss/" />
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+
+<script type="text/javascript" async src="//cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll@14.2.1/dist/smooth-scroll.min.js"></script>
+
+<script type='text/javascript'>
+      var _vds = _vds || [];
+      window._vds = _vds;
+      (function(){
+        _vds.push(['setAccountId', '932c4c012f3c6ec1']);
+        (function() {
+          var vds = document.createElement('script');
+          vds.type='text/javascript';
+          vds.async = true;
+          vds.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'dn-growing.qbox.me/vds.js';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(vds, s);
+        })();
+      })();
+</script>
+
+<style type="text/css">
+    body {
+    	font-family: 'Roboto', 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif';
+    }
+    .post-entry p {
+    	color: gray;
+    }
+    .card .card-header.no-image .featured-image-container {
+      height: 200px!important;
+    }
+    .cover .container {
+      padding-top: 250px;
+      padding-bottom: 200px;
+    }
+    .cover-home .container {
+      padding-top: 280px;
+      padding-bottom: 80px;
+    }
+    .card .card-footer .share-wrap .share-link-wrap a.weibo:hover {
+      background: #E42236;
+    }
+    .card .card-footer .share-wrap .share-link-wrap a.wechat:hover {
+      background: #2F9833;
+    }
+    .card .card-footer .share-wrap .share-link-wrap a.qq:hover {
+      background: #12B7F5;
+    }
+    .card .card-footer .share-wrap .share-link-wrap a.pocket:hover {
+      background: #ED455B;
+    }
+    .share-wrap-single .share-link-wrap a.weibo {
+      background: #E42236;
+    }
+    .share-wrap-single .share-link-wrap a.weibo:hover {
+      color: #E42236;
+      background: #FFFFFF;
+    }
+    .share-wrap-single .share-link-wrap a.wechat {
+      background: #2F9833;
+    }
+    .share-wrap-single .share-link-wrap a.wechat:hover {
+      color: #2F9833;
+      background: #FFFFFF;
+    }
+    .share-wrap-single .share-link-wrap a.qq {
+      background: #12B7F5;
+    }
+    .share-wrap-single .share-link-wrap a.qq:hover {
+      color: #12B7F5;
+      background: #FFFFFF;
+    }
+    .share-wrap-single .share-link-wrap a.pocket {
+      background: #ED455B;
+    }
+    .share-wrap-single .share-link-wrap a.pocket:hover {
+      color: #ED455B;
+      background: #FFFFFF;
+    }
+    .widget .social li a:hover.weibo {
+      background: #E42236;
+    }
+    .widget .social li a:hover.wechat {
+      background: #2F9833;
+    }
+    .widget .social li a:hover.qq {
+      background: #12B7F5;
+    }
+    .widget .social li a:hover.pocket {
+      background: #ED455B;
+    }
+    .card .card-header.no-image .featured-image-container {
+    	height: auto;
+  	}
+    .post.page .post-title {
+        text-align: center;
+    }
+     .gay_friends_list {
+      margin-top: 5em;
+    }
+
+    .gay_friends_list ul {
+      list-style: disc;
+      margin-left: 1.3em;
+    }
+
+    .gay_friends_list ul li {
+      list-style: none;
+      float: left;
+      width: 25%;
+      text-align: center;
+      height: 25%;
+      margin-bottom: 5em;
+    }
+
+    .gay_friends_list ul li a {
+      display: block;
+      width: 130px;
+      height: 64px;
+      -webkit-border-radius: 3px;
+      -moz-border-radius: 3px;
+      border-radius: 3px;
+      // background-color: white;
+    }
+    .gay_friends_list ul li img:hover {
+      -moz-box-shadow: -2px 4px 6px -2px rgba( 0, 0, 0, .10 ), 2px 4px 6px 2px rgba( 0, 0, 0, .05 );
+      -webkit-box-shadow: -2px 4px 6px -2px rgba( 0, 0, 0, .10 ), 2px 4px 6px 2px rgba( 0, 0, 0, .05 );
+      box-shadow: -2px 4px 6px -2px rgba( 0, 0, 0, .10 ), 2px 4px 6px 2px rgba( 0, 0, 0, .05 );
+      -webkit-border-radius: 3px;
+      -moz-border-radius: 3px;
+      border-radius: 3px;
+    }
+    .gay_friends_list ul li img {
+      width: 130px;
+      height: 64px;
+      padding: 0px;
+      background-color: white;
+      -webkit-border-radius: 3px;
+      -moz-border-radius: 3px;
+      border-radius: 3px;
+      border: 1px solid rgba(153, 153, 153, 0.23);
+    }
+    .table, table {
+        margin: 1.6em 0;
+        max-width: 100%;
+        width: 100%;
+        background-color: transparent
+    }
+
+    .table td, .table th, table td, table th {
+        padding: 8px;
+        vertical-align: middle;
+        text-align: left;
+        line-height: 20px
+    }
+
+    .table td, .table th {
+        border-top: 1px solid #dfe1e3
+    }
+
+    .table th {
+        color: #7d878a
+    }
+
+    .table caption + thead tr:first-child td, .table caption + thead tr:first-child th,
+    .table colgroup + thead tr:first-child td, .table colgroup + thead tr:first-child th,
+    .table thead:first-child tr:first-child td, .table thead:first-child tr:first-child th {
+        border-top: 0
+    }
+
+    .table tbody + tbody {
+        border-top: 2px solid #dfe1e3
+    }
+
+    .table table table {
+        background-color: #fff
+    }
+
+    .table tbody > tr:nth-child(odd) > td, .table tbody > tr:nth-child(odd) > th {
+        background-color: #fafafa
+    }
+
+    .table.plain tbody > tr:nth-child(odd) > td, .table.plain tbody > tr:nth-child(odd) > th {
+        background: 0 0
+    }
+	.side-panel ul {
+       padding-left: 0px;
+       list-style: none; 
+    }
+
+ 	.ad-list ul {
+       padding-left: 0px;
+       list-style: none; 
+    }
+    
+    .ad-list ul li {
+        margin-bottom: 10px; 
+    }
+
+    .ad-list ul li img {
+        height: auto;
+    }
+    
+    .list-title {
+    	text-align: center;
+    }
+   #post-ad-list-panel ul img {
+    	height: 180px;
+    }
+    .description {
+      font-size: 13px;
+      color: gray;
+      text-align: center;
+      line-height: 20px;
+    }
+
+    #green-android-logo {
+      height: 92px; 
+    }
+
+    .app-icon {
+      width: 38px;
+      position: relative;
+    }
+
+    .app-name {
+      color: #464646;
+      font-size: 12px;
+      text-align: center;
+      line-height: 16px;
+      margin: 6px 0;
+    }
+
+    .app-name:hover {
+      color: #FF5722;
+    }
+
+    .app-description {
+      font-size: 10px;
+      color: gray;
+      line-height: 16px;
+    }
+
+    .app-list{
+      text-align: center;
+    }
+
+    .app-list ul {
+      padding-left: 0px;
+      list-style: none;
+
+    }
+
+    .app-list ul li {
+       margin-top: 8px;
+       width: 46%;
+       float: left;
+       margin-left: 2%;
+       margin-right: 2%;
+    }
+
+    .app-list ul li span {
+      display: block;
+
+    }
+
+    .btn-link {
+      color: white;
+      margin-top: 5px;
+      padding-left: 20px;
+      padding-right: 20px;
+      text-decoration: none;
+      background-color: #FF5722;
+    }
+
+    .btn-link:hover {
+      color: white;
+      text-decoration: none;
+      background-color: #DB3D0B;
+    }
+
+    .center {
+      margin-left: 10%;
+      margin-right: 10%;
+    }
+
+    .top {
+      margin-top: 10px;
+    }
+    .bottom {
+      margin-bottom: 10px;
+    }
+    #app-friend-link-logo {
+      width: 30%;
+      height: 30%;
+    }
+    #search-results a {
+    	display: block;
+    	width: 100%;
+    	text-align: center;
+    }
+</style>
+<script>
+    var isShowAdList                      = true;
+	var isShowPostAdList                = true;
+    var isShowFuckGFWList 			  = true;
+    var isShowDonateInfoList 		   = false;
+    var isShowPostDonateInfoList 	 = true;
+    var isShowJobsInfoList       		 = true;
+    var isShowBookList 					  = true;
+	var isShowEventList 				  = true;
+    var isShowGreenAppList             = true;
+    var isShowAppRecommendList    = true;
+    var break_tag = "<br><br>";
+    
+var ad_list = {
+    title: "",
+    data: [
+        {
+            'title': "Vultr",
+            'sub_title': "Vultr 高性能 VPS",
+            'description': ",又来新年活动了，充 50刀 送 50 刀，注册既送 20 刀的活动，有羊毛就撸起来，建议东京、新加坡、美国硅谷机房，撸完后可以先 Ping 一下看速度，不满意删掉再撸。",
+            'url': "https://www.vultr.com/?ref=7781737-4F",
+            'img_url': "https://ws2.sinaimg.cn/large/006tNc79ly1fzcsu4hu56j308c06y0t3.jpg",
+            isshow: false,
+            ad_config: {
+                category: "Host",
+                action: "click",
+                label: "vultr-50-20",
+                value: "",
+                nodeid: "",
+            },
+            style: {
+                isRound: true
+            }
+        },
+        {
+            'title': "全民云计算 爆款云服务器低至 2 折，1 核 1G ¥ 293元/年",
+            'url': "https://promotion.aliyun.com/ntms/act/qwbk.html?userCode=j7dufdfe&utm_source=androidweekly.io&utm_medium=website",
+            'description': "",
+            'img_url': "https://ws4.sinaimg.cn/large/006tNc79ly1fz3t97qxrwj30go08cjrv.jpg",
+            isshow: false,
+            ad_config: {
+                category: "AD",
+                action: "click",
+                label: "Aliyun-RightBar-aw",
+                value: "",
+                nodeid: "",
+            },
+            style: {
+                isRound: true
+            }
+    	},
+        {
+            'title': "新客户无门槛领取总价值高达2775元代金券，每种代金券限量500张，先到先得。 ",
+            'url': "https://cloud.tencent.com/redirect.php?redirect=1025&cps_key=0a8e075b707cb3f9669f20fd65948011&from=console&utm_source=androidweekly.io&utm_medium=website",
+            'description': "",
+            'img_url': "https://ws2.sinaimg.cn/large/006tNc79ly1fz3o1v1gkjj30fk08c751.jpg",
+            isshow: false,
+            ad_config: {
+                category: "AD",
+                action: "click",
+                label: "Tencent-Cloud-New-User-Voucher",
+                value: "",
+                nodeid: "",
+            },
+            style: {
+                isRound: true
+            }
+    	},
+        {
+            'title': "「HenCoder Plus」Android 高级开发瓶颈突破系列课",
+            'url': "https://plus.hencoder.com/?utm_source=androidweekly.io&utm_medium=website",
+            'description': "用碎片化的时间，学习系统化内容；短期暴力提升，快速突破瓶颈。HenCoder Plus 作为一套全方位系统化的在线直播课程，开课两期以来，吸纳了来自 BAT、头条、滴滴等公司以及硅谷、台湾和日本的众多学员报名参加，并且众多学员在毕业一个月内先后入职阿里、腾讯、小米、头条等公司。其中一位学员拿到 80w+ 的年薪，多位学员年薪达到 45w 左右。",
+            'img_url': "https://ws1.sinaimg.cn/large/006tKfTcly1g1n98u7dcqj30go0goagg.jpg",
+            isshow: true,
+            ad_config: {
+                category: "AD",
+                action: "click",
+                label: "HenCoderPlus",
+                value: "",
+                nodeid: "",
+            },
+            style: {
+                isRound: true
+            }
+    	},
+        {
+            'title': "成为深度学习工程师",
+            'url': "http://t.cn/Eitg4HV",
+            'description': "学习未来所需技能，挑战实战项目，获得行业知名企业的认可，从零开始成为人工智能、机器学习、无人驾驶车，网站开发、移动开发和数据分析领域的抢手人才。",
+            'img_url': "https://ws4.sinaimg.cn/large/006tKfTcly1g1myvqphg6j30dw03caa8.jpg",
+            isshow: true,
+            ad_config: {
+                category: "AD",
+                action: "click",
+                label: "Udacity-Deep-Learning-Course",
+                value: "",
+                nodeid: "",
+            },
+            style: {
+                isRound: true
+            }
+    	},
+        {
+            'title': "众多精选正版软件，买正版，售后好，三折起",
+            'url': "https://partner.lizhi.io/androidweekly/cp?utm_source=androidweekly.io&utm_medium=right_sidebar",
+            'description': "",
+            'img_url': "https://ws4.sinaimg.cn/large/006tKfTcgy1g1p6imeggbj30rs0rs75k.jpg",
+            isshow: true,
+            ad_config: {
+                category: "AD",
+                action: "click",
+                label: "Lizhi-Software",
+                value: "",
+                nodeid: "",
+            },
+            style: {
+                isRound: true
+            }
+    	},
+        {
+            'title': "趣谈 Linux 操作系统",
+            'url': "http://gk.link/a/102Ju&utm_source=androidweekly.io&utm_medium=website",
+            'description': "限时优惠 68 元，4 月 6 日恢复原价 99 元",
+            'img_url': "https://ws2.sinaimg.cn/large/006tKfTcly1g1fz4g38loj30u01hdk40.jpg",
+            isshow: false,
+            ad_config: {
+                category: "AD",
+                action: "click",
+                label: "GeekTime-Talk-Linux-OS",
+                value: "",
+                nodeid: "",
+            },
+            style: {
+                isRound: true
+            }
+    	},
+        {
+            'title': "软件工程之美",
+            'url': "http://gk.link/a/102iR&utm_source=androidweekly.io&utm_medium=website",
+            'description': "限时优惠 68 元，3 月 2 日恢复原价 99 元",
+            'img_url': "https://ws4.sinaimg.cn/large/006tKfTcly1g0bicm76gdj30u01hddir.jpg",
+            isshow: false,
+            ad_config: {
+                category: "AD",
+                action: "click",
+                label: "GeekTime-Software-Enginnering-Beauty",
+                value: "",
+                nodeid: "",
+            },
+            style: {
+                isRound: true
+            }
+    	},
+        {
+            'title': "Go 语言核心 36 讲",
+            'url': "http://gk.link/a/102iQ&utm_source=androidweekly.io&utm_medium=website",
+            'description': "拼团仅需 58 元，涨价倒计时 2 天，之后价格即将上涨至 99 元",
+            'img_url': "https://ws3.sinaimg.cn/large/006tNc79ly1g03fvn1y10j30u01hdadf.jpg",
+            isshow: false,
+            ad_config: {
+                category: "AD",
+                action: "click",
+                label: "GeekTime-Play-Spring-Bucket",
+                value: "",
+                nodeid: "",
+            },
+            style: {
+                isRound: true
+            }
+    	},
+        {
+            'title': "玩转 Spring 全家桶",
+            'url': "http://gk.link/a/102a3&utm_source=androidweekly.io&utm_medium=website",
+            'description': "限时优惠 99 元，2 月 23 日恢复原价 129 元",
+            'img_url': "https://ws3.sinaimg.cn/large/006tNc79ly1g03fvn1y10j30u01hdadf.jpg",
+            isshow: false,
+            ad_config: {
+                category: "AD",
+                action: "click",
+                label: "GeekTime-Play-Spring-Bucket",
+                value: "",
+                nodeid: "",
+            },
+            style: {
+                isRound: true
+            }
+    	},
+        {
+            'title': "重学前端",
+            'url': "http://gk.link/a/10205&utm_source=androidweekly.io&utm_medium=website",
+            'description': "限时优惠 68 元，1 月 26 日恢复原价 99 元",
+            'img_url': "https://ws4.sinaimg.cn/large/006tNc79ly1fzctkslj0pj30u01hdk5l.jpg",
+            isshow: false,
+            ad_config: {
+                category: "AD",
+                action: "click",
+                label: "GeekTime-Repeat-Front-end",
+                value: "",
+                nodeid: "",
+            },
+            style: {
+                isRound: true
+            }
+    	},
+        {
+            'title': "玩转 Git 三剑客",
+            'url': "https://time.geekbang.org/course/intro/145?code=WjH7CG5xMAAq%2FeXHZVu5nrlAp%2FXYHBO0B-K3icHxAAA%3D&utm_source=androidweekly.io&utm_medium=website",
+            'description': "限时优惠 45 元，12 月 22 日恢复原价 68 元",
+            'img_url': "https://ws3.sinaimg.cn/large/006tNbRwly1fy35dmcbx6j30u01he1k6.jpg",
+            isshow: false,
+            ad_config: {
+                category: "AD",
+                action: "click",
+                label: "GeekTime-Git-Three-Swordsman",
+                value: "",
+                nodeid: "",
+            },
+            style: {
+                isRound: true
+            }
+    	},
+        {
+            'title': "Android 开发高手课",
+            'url': "https://time.geekbang.org/column/intro/142?code=CzZyMVt9D2DFD9KOOd%2FHWWCts5PGI7cAMhV4MJerI6c%3D&utm_source=androidweekly.io&utm_medium=website",
+            'description': "",
+            'img_url': "https://ws1.sinaimg.cn/large/006tNbRwly1fxxc6ssgh2j30u01hekjl.jpg",
+            isshow: false,
+            ad_config: {
+                category: "AD",
+                action: "click",
+                label: "GeekTime-Android-Dev-Advanced",
+                value: "",
+                nodeid: "",
+            },
+            style: {
+                isRound: true
+            }
+    	}]
+};
+
+var post_ad_list = {
+    title: "",
+    data: [
+      {
+            'title': "Mac 清理优化工具 MacBooster 限时特惠，终生版6折最低仅需 59 元",
+            'url': "https://partner.lizhi.io/androidweekly/macbooster",
+            'description': "",
+            'img_url': "https://ws3.sinaimg.cn/large/006tNc79ly1g1vjtac7mij312c0a0jui.jpg",
+            isshow: true,
+            ad_config: {
+                category: "AD",
+                action: "click",
+                label: "MacBooster-Post-Bottom-AD",
+                value: "",
+                nodeid: "",
+            },
+            style: {
+                isRound: true
+            }
+      },
+      {
+            'title': "各种精选正版软件，买正版，售后好，三折起",
+            'url': "https://partner.lizhi.io/androidweekly/cp",
+            'description': "",
+            'img_url': "https://ws4.sinaimg.cn/large/006tKfTcgy1g1p75ckqh1j312c0a0gmp.jpg",
+            isshow: false,
+            ad_config: {
+                category: "AD",
+                action: "click",
+                label: "LiZhi-Post-Bottom-AD",
+                value: "",
+                nodeid: "",
+            },
+            style: {
+                isRound: true
+            }
+      },
+      {
+            'title': "超低价享用 100+ 精选 Mac 应用",
+            'url': "http://t.cn/EJVzlxV",
+            'description': "免费试用7天，无需信用卡，随时取消",
+            'img_url': "https://ws3.sinaimg.cn/large/006tKfTcly1g1f8rcpg3tj312c07sq5l.jpg",
+            isshow: false,
+            ad_config: {
+                category: "AD",
+                action: "click",
+                label: "Steapp-Post-Bottom-AD",
+                value: "",
+                nodeid: "",
+            },
+            style: {
+                isRound: true
+            }
+      },
+      {
+            'title': "中国年世界年-精选好书定价 3.9 折起，Prime 会员再享 8 折",
+            'url': "http://t.cn/Eqtn2Zb",
+            'description': "",
+            'img_url': "https://ws4.sinaimg.cn/large/006tNc79ly1fz3t30bhxij315o08c77i.jpg",
+            isshow: false,
+            ad_config: {
+                category: "AD",
+                action: "click",
+                label: "AMZ-Post-Books-AD",
+                value: "",
+                nodeid: "",
+            },
+            style: {
+                isRound: true
+            }
+      },
+    {
+    	'title': "Amazon 图书",
+    	'url': "https://www.amazon.cn/gp/promotion/landingpage/A21XVXNA2IQY2K?&tag=androidweekly-post-bottom-23&camp=356&creative=6388&linkCode=ur1&adid=1Q172DERPCX56NCE4RW4&",
+   		'description': "18 万畅销好书，满 150 元减 50 元",
+   		'img_url': "https://images-cn.ssl-images-amazon.com/images/G/28/cnbooks/event/2017JuneB150G50/xq-170531-72890-book._V509455889_.jpg",
+    	 isshow: false,
+    	ad_config: {
+        	category: "AD",
+        	action: "click",
+        	label: "AmazonBookPostBottom",
+        	value: "",
+        	nodeid: "",
+    	},
+    	style: {
+        	isRound: false
+    	}
+	}]
+};
+
+var fuck_gfw_list = {
+    title: "开启新世界大门的🔑",
+    data: [
+      {
+            'title': "AgentNEO",
+            'sub_title': "稳定流畅的智能加速服务只为释放你的生产力",
+            'description': "AgentNEO 是一家加拿大团队打造的一款智能加速服务，我们的目标是帮助尽可能多的人拥有更加自由、稳定的互联网环境",
+            'url': "https://agentneo.io/?rc=2a76npue",
+            'img_url': "https://ws2.sinaimg.cn/large/006tKfTcly1fqqzjt5i1sj30bg03iglq.jpg",
+            isshow: true,
+            ad_config: {
+                category: "Host",
+                action: "click",
+                label: "AgentNEO",
+                value: "",
+                nodeid: "",
+            },
+            style: {
+                isRound: true
+            }
+        },
+       {
+            'title': "BandwagonHost",
+            'sub_title': "Mass VPS hosting on Enterprise equipment",
+            'description': "注册即送 10 刀，更有直连中国的线路仅需 3.99 刀一个月，年付只需 29 刀，使用优惠码 BWH1ZBPVK 再节省 6%",
+            'url': "https://bwh1.net/aff.php?aff=133&pid=57",
+            'img_url': "https://ww1.sinaimg.cn/large/006tNbRwly1ffe62qvivcj308g02st92.jpg",
+            isshow: true,
+            ad_config: {
+                category: "Host",
+                action: "click",
+                label: "bandwagonhost",
+                value: "",
+                nodeid: "",
+            },
+            style: {
+                isRound: true
+            }
+        },
+        {
+            'title': "Vultr",
+            'sub_title': "Vultr 高性能 VPS",
+            'description': "Vultr 注册即送 30 刀，节点多，最便宜 2.5 刀一个月",
+            'url': "https://www.vultr.com/?ref=706872",
+            'img_url': "https://ww1.sinaimg.cn/large/006tNbRwly1ffe62qbnm4j308g02saa8.jpg",
+            isshow: true,
+            ad_config: {
+                category: "Host",
+                action: "click",
+                label: "vultr",
+                value: "",
+                nodeid: "",
+            },
+            style: {
+                isRound: true
+            }
+        },
+        {
+            'title': "Linode",
+            'sub_title': "SSD Cloud Hosting & Linux Servers",
+            'description': "注册即送 10 刀，节点多，最便宜 5 刀一个月",
+            'url': "https://www.linode.com/?r=9343985e91d6bd860b71f5284ea5c8f674f2775e",
+            'img_url': "https://ww1.sinaimg.cn/large/006tNbRwly1ffe62qir5cj308g02swew.jpg",
+        	isshow: true,
+            ad_config: {
+                category: "Host",
+                action: "click",
+                label: "linode",
+                value: "",
+                nodeid: "",
+            },
+            style: {
+                isRound: true
+            }
+        },
+        {
+            'title': "DigitalOcean",
+            'sub_title': "Cloud computing designed for developers",
+            'description': "注册即送 10 刀，节点多，最便宜 5 刀一个月",
+            'url': "https://www.digitalocean.com/?refcode=ef15936ffa93",
+            'img_url': "https://ww1.sinaimg.cn/large/006tNbRwly1ffe62qnb5ij308g02s0t1.jpg",
+            isshow: true,
+            ad_config: {
+                category: "Host",
+                action: "click",
+                label: "digitalocean",
+                value: "",
+                nodeid: "",
+            },
+            style: {
+                isRound: true
+            }
+        }
+    ]
+};
+
+var donate_info_list = {
+    title: "捐赠",
+    description: '如果你觉得 Android 开发技术周报对您有所帮助，请考虑对本周报捐赠支持。支持我把 Android 开发技术周报做的更好，帮助更多的人，金额随意，您的捐赠将用于支付服务器和邮件推送服务的费用。<a href="http://www.androidweekly.cn/donate/" target="_self">捐赠列表</a>',
+    data: [{
+            title: "支付宝",
+            url: "",
+            img_url: "https://ww3.sinaimg.cn/large/8a41f469gw1f663b29t6mj2074074q3g.jpg",
+            img_syle: 'width: 152px; height: 152px;',
+        	isshow: true
+        },
+        {
+            title: "微信",
+            url: "",
+            img_url: "https://ww2.sinaimg.cn/large/006tNbRwgy1fdmcbdm8ghj3074074dh8.jpg",
+            img_syle: 'width: 152px; height: 152px;',
+            isshow: true
+        },
+        {
+            title: "PayPal",
+            url: "https://www.paypal.me/inferjay",
+            img_url: "http://www.paypalobjects.com/webstatic/mktg/Logo/pp-logo-200px.png",
+            img_syle: '',
+            isshow: false
+        }
+    ]
+};
+
+var post_donate_info_list = {
+    title: "捐赠",
+    description: '如果你觉得 Android 开发技术周报对您有所帮助，请考虑对本周报捐赠支持。支持我把 Android 开发技术周报做的更好，帮助更多的人，金额随意，您的捐赠将用于支付服务器和邮件推送服务的费用。<a href="http://www.androidweekly.cn/donate/" target="_self">捐赠列表</a>',
+    data: [{
+            title: "支付宝",
+            url: "",
+            img_url: "https://ww3.sinaimg.cn/large/8a41f469gw1f663b29t6mj2074074q3g.jpg",
+            img_syle: 'width: 214px; height: 214px;',
+        	isshow: true
+        },
+        {
+            title: "微信",
+            url: "",
+            img_url: "https://ww2.sinaimg.cn/large/006tNbRwgy1fdmcbdm8ghj3074074dh8.jpg",
+            img_syle: 'width: 214px; height: 214px;',
+            isshow: true
+        }
+    ]
+};
+
+var post_jobs_info_list = {
+    title: "酷工作",
+    data: [
+     {
+            title: "一条生活馆诚招高级 Android 开发工程师🆕",
+            url: "http://www.androidweekly.cn/cool-jobs-info-20/",
+            content: '上海／徐汇区桂林路／20-40k／不加班／其他该有的也全有／每月多500零花钱给你买零食',
+            isshow: true
+      },
+     {
+            title: "OPPO 诚招 Android 开发和Java后端工程师🆕",
+            url: "http://www.androidweekly.cn/cool-jobs-info-19/",
+            content: '深圳／南山区后海地铁站／20k ~ 40k / 双休 / 年终奖丰厚',
+            isshow: true
+      },
+      {
+            title: "快手诚招 Android 开发工程师",
+            url: "http://www.androidweekly.cn/cool-jobs-info-18/",
+            content: '北京／深圳／五道口／20-50k / 五险一金 / 16薪起 / 免费健身房',
+            isshow: true
+       },
+       {
+            title: "领英中国诚招 Android 工程师",
+            url: "http://www.androidweekly.cn/cool-jobs-info-17/",
+            content: '北京／东三环嘉铭中心(10号线团结湖)／20k~40k／双休／六险一金',
+            isshow: false
+       },
+       {
+            title: "北京明日虫洞科技有限公司诚招 Android 工程师",
+            url: "https://github.com/hehonghui/the-jobs/blob/master/beijing/newsdog.md",
+            content: '北京／十号线海淀黄庄（中关村大厦）／20k ~ 30k／五险一金／补充医疗／年底双薪／免费午餐和晚餐',
+            isshow: false
+        },
+        {
+            title: "步步高教育电子有限公司诚招 Android 应用工程师",
+            url: "http://www.androidweekly.cn/cool-jobs-info-15/",
+            content: '东莞／广东省东莞市长安镇／二线城市，临近一线/行业内有竞争力的薪资待遇/生活开支低/适合定居长期发展/表现优异有获得年终奖的机会',
+            isshow: false
+        },
+        {
+            title: "大疆创新诚招 Android 高级开发工程师/架构师",
+            url: "http://www.androidweekly.cn/cool-jobs-info-14/",
+            content: '深圳／高新南四路半导体设计大厦／20~50k / 六险一金／年终多薪／技术提升／企业文化 / 内部股',
+            isshow: true
+         },
+        {
+            title: "网易乐得诚招 Android 开发工程师",
+            url: "http://www.androidweekly.cn/cool-jobs-info-13/",
+            content: '北京／中关村软件园二期(西二旗地铁)／17k ~ 35k／五险一金／14薪+季度奖+年终奖／技术提升／团建／双休／弹性上班时间',
+            isshow: true
+         },
+         {
+            title: "郑州卓见软件科技有限公司诚招 Android 开发工程师",
+            url: "http://www.androidweekly.cn/cool-jobs-info-11/",
+            content: '郑州／7K-12K／六险一金／年终多薪／技术提升／企业文化／团建／双休／弹性上班时间／项目奖金／技术氛围浓厚／纯互联网公司／纯产品公司／优秀者薪资可面议',
+            isshow: false
+         },
+         {
+            title: "上海即果信息技术有限公司急招 Android 开发工程师（全职/实习）",
+            url: "http://www.androidweekly.cn/cool-jobs-info-7/",
+            content: '上海／五角场创智天地／20k ~ 30k／五险一金／双休／弹性上班时间',
+            isshow: false
+         },
+         {
+            title: "👉戳我查看更多招聘信息👈",
+            url: "http://www.androidweekly.cn/cool-jobs",
+            content: '更多招聘信息请查看「酷工作页面」',
+            isshow: true
+        }
+    ]
+};
+
+var books = {
+	title: "书",
+	showCount: 4,
+	data:[
+        {
+            title: "Android 应用安全防护和逆向分析",
+            url: "https://amazon.cn/gp/offer-listing/B0788XV9WC/ref=as_li_tl?ie=UTF8&camp=536&creative=3200&creativeASIN=B0788XV9WC&linkCode=am2&tag=androidweekly-post-book-23&linkId=13ec02df709738e9e231ea2f335caac6",
+            description: "本书全面介绍Android应用的安全防护方法与逆向分析技术，分为四篇：基础篇、防护篇、工具篇、操作篇，共26章。基础篇包括第1~7章，主要介绍移动应用安全的基础知识，包括Android中NDK开发知识、逆向中需要用到的命令、编译之后的apk包含的四类主要文件格式解析等。防护篇包括第8~14章，主要介绍移动应用安全防护的相关技术，包括混淆、签名校验、反调试检测等安全策略，Android应用升级权限、降低权限等，配置文件中的问题，应用签名机制，apk的加固策略，so文件的加固策略等。工具篇包括第15~19章，主要介绍逆向分析常用的工具以及使用场景，包括如何开启设备的总调试开关，反编译利器apktool、Jadx、Xposed、CydiaSubstrate等。操作篇包括第20~26章，主要介绍Android中的逆向分析技巧，包括静态方式和动态方式，介",
+            img_url: "",
+            tags: "Android,逆向,安全",
+            isshow: true,
+            isshowCover: true,
+            isad: false,
+            ad_config: {
+                category: "AD",
+                action: "click",
+                label: "",
+                value: "",
+                nodeid: "",
+            },
+            style: {
+                isRound: true
+            }
+        },
+		{
+            title: "无界面交互:潜移默化的 UX 设计方略",
+            url: "http://t.cn/Rotrq7Z",
+            description: "本书通过丰富的示例和生动的讲解，深刻揭示了当今屏幕至上的界面设计的种种怪象。本书呼吁将设计的重心由界面转向对用户个性化需求的关怀，并提出了无界面交互设计方略的三个原则以构建优质用户体验：贴合日常生活流程，做电脑的主人而非仆人，适应个体情况。",
+            img_url: "",
+            tags: "Design,UX",
+            isshow: true,
+            isshowCover: true,
+            isad: false,
+            ad_config: {
+                category: "AD",
+                action: "click",
+                label: "",
+                value: "",
+                nodeid: "",
+            },
+            style: {
+                isRound: true
+            }
+        },
+        {
+            title: "极简主义:风靡欧美的工作与生活理念",
+            url: "http://t.cn/RotrQOG",
+            description: "本书适合所有想提高做事效率、提升人生幸福感的人士阅读。如果你真的想简化繁重的工作事务和日常生活，请一定要记住：好方法往往最简单。",
+            img_url: "",
+            tags: "工作,生活",
+            isshow: true,
+            isshowCover: true,
+            isad: false,
+            ad_config: {
+                category: "AD",
+                action: "click",
+                label: "",
+                value: "",
+                nodeid: "",
+            },
+            style: {
+                isRound: true
+            }
+        },
+        {
+            title: "Gradle for Android 中文版",
+            url: "http://t.cn/RotVOIb",
+            description: "本书共分9章，依次介绍了 Gradle 的基础知识、基本自定义构建、依赖管理、创建构建 Variants、管理多模块构建、运行测试、创建 tasks 和插件、设置持续集成，以及高级自定义构建。",
+            img_url: "",
+            tags: "Android,Gradle",
+            isshow: true,
+            isShowCover: true,
+            isad: false,
+            ad_config: {
+                category: "AD",
+                action: "click",
+                label: "",
+                value: "",
+                nodeid: "",
+            },
+            style: {
+                isRound: true
+            }
+        },
+        {
+            title: "增长黑客实战",
+            url: "http://t.cn/RotfVPF",
+            description: "本书围绕硅谷前沿的增长黑客职业，讲解增长理念的树立、增长团队的组建、流程制度的创立、技术营销的运用等团队运营成功实战经验。本书适合希望成功创业的 CEO、公司经理、开发人员、产品经理和市场运营人员，以及任何有创意并且想创业的人。",
+            img_url: "",
+            tags: "运营,Growth Hacking",
+            isshow: true,
+            isshowCover: true,
+            isad: false,
+            ad_config: {
+                category: "AD",
+                action: "click",
+                label: "",
+                value: "",
+                nodeid: "",
+            },
+            style: {
+                isRound: true
+            }
+        },
+        {
+            title: "提问的智慧",
+            url: "https://github.com/ryanhanwu/How-To-Ask-Questions-The-Smart-Way/blob/master/README-zh_CN.md",
+            description: "本指南将教你如何正确的提问以获得你满意的答案。",
+            img_url: "",
+            tags: "提问",
+            isshow: true,
+            isshowCover: true,
+            isad: false,
+            ad_config: {
+                category: "AD",
+                action: "click",
+                label: "",
+                value: "",
+                nodeid: "",
+            },
+            style: {
+                isRound: true
+            }
+        },
+        {
+            title: "A Primer on Bézier Curves",
+            url: "https://pomax.github.io/bezierinfo/zh-CN/",
+            description: "一本讲解贝塞尔曲线的开源书",
+            img_url: "",
+            tags: "贝塞尔曲线",
+            isshow: true,
+            isshowCover: true,
+            isad: false,
+            ad_config: {
+                category: "AD",
+                action: "click",
+                label: "",
+                value: "",
+                nodeid: "",
+            },
+            style: {
+                isRound: true
+            }
+        },
+        {
+            title: "免费的编程中文书籍索引",
+            url: "http://siberiawolf.com/free_programming/index.html",
+            description: "本索引包含：国外程序员在 stackoverflow 推荐的程序员必读书籍，中文版；stackoverflow 上的程序员应该阅读的非编程类书籍有哪些？ 中文版；github 上的一个流行的编程书籍索引 中文版",
+            img_url: "",
+            tags: "OpenSource Book,Free",
+            isshow: true,
+            isshowCover: true,
+            isad: false,
+            ad_config: {
+                category: "AD",
+                action: "click",
+                label: "",
+                value: "",
+                nodeid: "",
+            },
+            style: {
+                isRound: true
+            }
+        },
+        {
+            title: "人类简史：从动物到上帝",
+            url: "http://t.cn/Rot8C7R",
+            description: "以色列新锐历史学家的一部重磅作品。从十万年前有生命迹象开始到 21 世纪资本、科技交织的人类发展史。十万年前，地球上至少有六个人种，为何今天却只剩下了我们自己？我们曾经只是非洲角落一个毫不起眼的族群，对地球上生态的影响力和萤火虫、猩猩或者水母相差无几。为何我们能登上生物链的顶端，最终成为地球的主宰？",
+            img_url: "",
+            tags: "社会学",
+            isshow: true,
+            isshowCover: true,
+            isad: false,
+            ad_config: {
+                category: "AD",
+                action: "click",
+                label: "",
+                value: "",
+                nodeid: "",
+            },
+            style: {
+                isRound: true
+            }
+        },
+        {
+            title: "重来:更为简单有效的商业思维",
+            url: "http://t.cn/RotRYYU",
+            description: "大多数的企业管理的书籍都会告诉你：制定商业计划、分析竞争形势、寻找投资人等等。如果你要找的是那样的书，那么把《重来:更为简单有效的商业思维》放回书架吧。《重来:更为简单有效的商业思维》呈现的是一种更好、更简单的经商成功之道。",
+            img_url: "",
+            tags: "创业,商业",
+            isshow: true,
+            isshowCover: true,
+            isad: false,
+            ad_config: {
+                category: "AD",
+                action: "click",
+                label: "",
+                value: "",
+                nodeid: "",
+            },
+            style: {
+                isRound: true
+            }
+        },
+        {
+            title: "重新定义团队:谷歌如何工作",
+            url: "http://t.cn/RotEwoG",
+            description: "在谷歌，人始终被当作企业最重要的财富，谷歌管理层始终将发掘、培养和留住人才，作为企业高战略，这是谷歌成为幸福企业和成功企业的根本。正如作者所说，谷歌的这些原则对任何团队的组建和管理都适用。不管你是苦于找不到合伙人的初创公司老板，还是面临好人才跳槽的企业经理人，抑或是面对互联网转型的企业高管，都能从书中重新发现人才的重要性和团队的价值。",
+            img_url: "",
+            tags: "谷歌,创业,运营,招聘",
+            isshow: true,
+            isshowCover: true,
+            isad: false,
+            ad_config: {
+                category: "AD",
+                action: "click",
+                label: "",
+                value: "",
+                nodeid: "",
+            },
+            style: {
+                isRound: true
+            }
+        },
+        {
+            title: "鱼羊野史(第1卷)",
+            url: "http://t.cn/RotEnk4",
+            description: "历史，有的时候是故事，有的时候是事故，有的时候山重水复疑无路。 人类，有的时候聪明，有的时候傻，但始终在进化。 历史不是镜子，历史是开了又落的花，朝花夕拾, 跟高晓松一起，重温故国、故城、故人芳华刹那",
+            img_url: "",
+            tags: "历史",
+            isshow: true,
+            isshowCover: true,
+            isad: false,
+            ad_config: {
+                category: "AD",
+                action: "click",
+                label: "",
+                value: "",
+                nodeid: "",
+            },
+            style: {
+                isRound: true
+            }
+        },
+        {
+            title: "重新定义公司:谷歌是如何运营的",
+            url: "http://t.cn/RotnCxs",
+            description: "今日的谷歌是全球最具标志性的企业，在各个领域都有创新突破，并向技术的极限推进。《重新定义公司：谷歌是如何运营的》作者是谷歌执行董事长埃里克·施密特和前高级副总裁乔纳森·罗森伯格，他们亲自分享十余年来帮助谷歌成长所领悟到的管理启示：科技正在改变商业的方方面面，这种改变速度空前，而且仍在加速，公司若想在互联网时代站稳脚跟，就要制定新的商业规则。",
+            img_url: "",
+            tags: "谷歌,创业,运营",
+            isshow: true,
+            isshowCover: true,
+            isad: false,
+            ad_config: {
+                category: "AD",
+                action: "click",
+                label: "",
+                value: "",
+                nodeid: "",
+            },
+            style: {
+                isRound: true
+            }
+        },
+        {
+            title: "腾讯传1998—2016",
+            url: "http://t.cn/RotuPIN",
+            description: "从1998年开始创业到成为世界级互联网巨头，腾讯以即时通信工具起步，逐渐进入社交网络、互动娱乐、网络媒体、电子商务等领域，在超高速发展的同时亦饱受争议，在“3Q大战”的激烈冲突之后又进一步走向开放……腾讯的发展路径，亦是中国互联网企业成长的缩影。我们可以看到，中国的互联网人在应用性迭代和对本国消费者的行为了解上，找到了自己的办法，并开始领跑全球。",
+            img_url: "",
+            tags: "腾讯,传记",
+            isshow: true,
+            isshowCover: true,
+            isad: false,
+            ad_config: {
+                category: "AD",
+                action: "click",
+                label: "",
+                value: "",
+                nodeid: "",
+            },
+            style: {
+                isRound: true
+            }
+        },
+        {
+            title: "把时间当作朋友(第3版)",
+            url: "http://t.cn/RotuIRJ",
+            description: "从心智成长的角度来谈自我积累。李笑来老师通过自己职业生涯中遇到的事例，告诉我们：如何打开心智，如何运用心智来和时间做朋友，从而开启人生的成功旅程。畅销多年，虽经反复咀嚼依然不断有新的启发，令人受用至今——这就是本书的魅力！",
+            img_url: "",
+            tags: "认知,心智,时间",
+            isshow: true,
+            isshowCover: true,
+            isad: false,
+            ad_config: {
+                category: "AD",
+                action: "click",
+                label: "",
+                value: "",
+                nodeid: "",
+            },
+            style: {
+                isRound: true
+            }
+        },
+        {
+            title: "从0到1:开启商业与未来的秘密",
+            url: "http://t.cn/RotuRhL",
+            description: "硅谷创投教父、PayPal创始人作品，斯坦福大学改变未来的一堂课，为世界创造价值的商业哲学。在科技剧烈改变世界的今天，想要成功，你必须在一切发生之前研究结局。你必须找到创新的独特方式，让未来不仅仅与众不同，而且更加美好。从0到1，为自己创造无限的机会与价值！",
+            img_url: "",
+            tags: "创业",
+            isshow: true,
+            isshowCover: true,
+            isad: false,
+            ad_config: {
+                category: "AD",
+                action: "click",
+                label: "",
+                value: "",
+                nodeid: "",
+            },
+            style: {
+                isRound: true
+            }
+        },
+        {
+            title: "把你的英语用起来!(新版) ",
+            url: "http://t.cn/Rot3UrV",
+            description: "在这本书中，作者刘晓光和伍君仪以自己英语逆袭的亲身经历入手，提供了一套理论清晰、操作性强的英语训练体系，向所有英语学习者传达了这样的理念：语言学习没有捷径，但没有捷径并不意味着学习者要坚持下去一定会十分艰辛。",
+            img_url: "",
+            tags: "英语",
+            isshow: true,
+            isshowCover: true,
+            isad: false,
+            ad_config: {
+                category: "AD",
+                action: "click",
+                label: "",
+                value: "",
+                nodeid: "",
+            },
+            style: {
+                isRound: true
+            }
+        },
+        {
+            title: "1368个单词就够了",
+            url: "http://t.cn/Rot3YSK",
+            description: "这本书是作者王乐平先生历时4年研发，在教学过程中更好的实现了本书思想的实际指导作用。这本书的基础在于：中国人背了多年的单词，学语法，练习听力和口语，参加了多种类型的考试，但由于缺乏语言环境，很多人在真正使用英语的时候，还是出现表达障碍。",
+            img_url: "",
+            tags: "英语",
+            isshow: true,
+            isshowCover: true,
+            isad: false,
+            ad_config: {
+                category: "AD",
+                action: "click",
+                label: "",
+                value: "",
+                nodeid: "",
+            },
+            style: {
+                isRound: true
+            }
+        },
+        {
+            title: "每天最重要的2小時",
+            url: "http://t.cn/Rot1JHR",
+            description: "本書作者戴維斯告訴我們，企圖以效法電腦效率的方式來管理我們的時間，注定要失敗。他以淺顯易懂且有趣的文筆生動地解釋行為科學，告訴我們一天當中真正有效率的關鍵時刻，而且一樣重要的是，他也告訴我們如何用更好的方式，安排其他效率沒那麼好的平凡時刻。",
+            img_url: "",
+            tags: "时间",
+            isshow: true,
+            isshowCover: true,
+            isad: false,
+            ad_config: {
+                category: "AD",
+                action: "click",
+                label: "",
+                value: "",
+                nodeid: "",
+            },
+            style: {
+                isRound: true
+            }
+        },
+        {
+            title: "增长黑客:创业公司的用户与收入增长秘籍",
+            url: "http://t.cn/RotBEcK",
+            description: "增长黑客”这一概念近年来兴起于美国互联网创业圈，最早是由互联网创业者Sean Ellis提出。增长黑客是介于技术和市场之间的新型团队角色，主要依靠技术和数据的力量来达成各种营销目标，而非传统意义上靠砸钱来获取用户的市场推广角色。",
+            img_url: "",
+            tags: "创业,Growth Hacking",
+            isshow: true,
+            isshowCover: true,
+            isad: false,
+            ad_config: {
+                category: "AD",
+                action: "click",
+                label: "",
+                value: "",
+                nodeid: "",
+            },
+            style: {
+                isRound: true
+            }
+        },
+        {
+            title: "Android Things 中文文档社区预览版",
+            url: "https://atdocs.cn",
+            description: "全球已经有很多开发者使用 Android Things 开发出了非常有意思的应用，使用 Android Things 技术在物联网领域占得一席之地。这一次，我们希望中国的开发者也能参与，不掉队。我们与官方取得联系，在 Android Things 的文档最近进行的一次大改动之后，计划招募志愿者将文档中文化，并持续跟进。欢迎大家不停的 Review 这份翻译文档。在我们的社区校对完成之后，文档就是 Google Developers 中文官方文档。",
+            img_url: "",
+            tags: "Android,Android Things,物联网,IoT",
+            isshow: true,
+            isshowCover: true,
+            isad: false,
+            ad_config: {
+                category: "AD",
+                action: "click",
+                label: "",
+                value: "",
+                nodeid: "",
+            },
+            style: {
+                isRound: true
+            }
+        }
+	]
+};
+
+var evnets = {
+	title: "活动",
+	data: [
+       {
+            title: "暂无推荐的活动",
+            url: "https://gdgdocs.org/r/A8lDj5",
+            description: '欢迎推荐你觉得值得参加的活动...',
+            isshow: true
+        },
+        {
+            title: "腾讯Live开发者大会",
+            url: "http://2018.tlc.ivweb.io/",
+            description: '前沿科技！探索跨端无限可能，腾讯 Live 技术开发者大会（TLC）再度来袭，早鸟票倒计时！本次TLC大会主题涵盖 AI 人体姿态识别、NBA直播系统千万高并发架构、世界杯直播技术揭秘、春节期间最热门的在线答题方案剖析，更有当下最热门的移动端 Google Flutter、RN和小程序的实践场景，本次大会，我们邀请了国内外16名行业专家，他们来自Instagram、腾讯、YY、声网、熊猫直播、陌陌、即构科技等国内外知名企业，这将是一场技术架构领域的嘉年华。购票地址：<a href="https://www.bagevent.com/widget/ticket/829116" target="_blank">https://www.bagevent.com/widget/ticket/829116</a><p>购票优惠码：<code>androidweekly</code> 使用该优惠码购票可以省 <code>30 元</code></p>',
+            isshow: false
+        },
+        {
+            title: "「HenCoder Plus」Android 高级培养计划",
+            url: "http://plus.hencoder.com/",
+            description: '线上教学，助力你快速提升 Android 关键技能，突破瓶颈，实现技术跃迁',
+            isshow: false
+        },
+        {
+            title: "Google Play 政策更新｜Google Play 线上培训营 · 三月第 2 期",
+            url: "https://mp.weixin.qq.com/s/P1uezfOPgOdCjr3FaYzm9g",
+            description: '本次课程我们将为大家介绍下今年都有哪些重点政策做了更新。想快速了解 Google Play 最新政策更新或是您有一些相关疑问，都非常欢迎您来参加我们此次的课程，我们将对新政策做详细的深度解析。Google Play 团队将会留出 20 分钟的时间为您在线答疑。',
+            isshow: false
+        },
+        {
+            title: "掘金线下沙龙 JTalk ：《Android 进阶之旅》",
+            url: "https://wx.duohui.co/event/3230",
+            description: '本次 JTalk 邀请到了美团、滴滴、得到、Powerinfo 工程师，来一起聊聊 Android 应用架构体系及团队技术体系的搭建和演进、组件化和 SDK 的性能优化。',
+            isshow: false
+        },
+        {
+            title: "巧用订阅功能增加营收｜Google Play 线上培训营 · 三月第 1 期",
+            url: "https://mp.weixin.qq.com/s/e1BwOFmNHXNRe9Y0kRVgTA",
+            description: '本月课程我们将介绍如何为您的应用程序新增订阅项目来提高收益以及重点政策更新！您可以通过订阅功能新增产品，定期向使用者收取内容或服务费用，每款应用程序都可提供多种不同周期的订阅方案。在课程里 Google Play 小组会预留 20 分钟进行在线问答，欢迎大家踊跃提问。',
+            isshow: false
+        },
+        {
+            title: "悟空净化众筹计划",
+            url: "https://yanlu.me/wu_kong_ad_none/",
+            description: '为什么要众筹：做了6个月的个人开发者，太艰难了。周末无休、深夜修bug、定位手机兼容问题、回复用户问题、上千个应用的解码。大量用户的涌入，无力支撑大量解码，工作量实在太多，决心做个改变，2018年只服务核心用户',
+            isshow: false
+        },
+        {
+            title: "邀请函 | 在线与专家互动，为您解析 Android Oreo",
+            url: "https://mp.weixin.qq.com/s/8Xp7E-7SEOpgGIkREJ4kCg",
+            description: '元旦已经走远，春节尚未来临。在这种浓浓的节日气息下，我们为各位开发者们准备了一份 “新春贺礼” ，2 月 7 日 (周三) 晚八点半，一场妙趣横生的线上直播趴等您 “盛装” 莅临。我们将在此次直播中帮助您迅速了解 Android Oreo 特性及兼容性，一起回到 “课堂”，温故知新，以饱满的状态迎接新的一年。',
+            isshow: false
+        },
+        {
+            title: "2017 Google 开发者大会",
+            url: "http://www.google.cn/intl/zh-CN/events/developerdays2017china/",
+            description: 'Google 开发者大会 (Google Developer Days，简称 GDD) 是展示 Google 最新开发者产品和平台的全球盛会，旨在帮助您快速开发优质应用，发展和留住活跃用户群，充分利用各种工具赚取更多收益。2017 Google 开发者大会将于 12 月 13 日和 14 日于上海举办，主题将涵盖 Android、移动网络、Firebase、机器学习、云服务、AR/VR、设计以及更多。我们非常高兴与您分享我们关于创新技术的想法，鼓励广大开发者着手构建下一个精彩的移动应用或网络体验。',
+            isshow: false
+        },
+        {
+            title: "HenCoder「仿写酷界面」活动——征稿",
+            url: "http://hencoder.com/activity-mock-1/",
+            description: 'HenCoder 的自定义 View 部分第一季——绘制——的技术讲解部分已经结束。在下一季——布局——开始之前，绘制部分还有最后一个环节，那就是在上个月我提到过的：「仿写酷界面」活动。',
+            isshow: false
+        },
+        {
+            title: "增长大咖面对面」GrowingIO 2017 增长大会",
+            url: "https://www.bagevent.com/event/851446?bag_track=1016edm",
+            description: 'GrowingIO 2017 增长大会，国内顶尖增长大会，立足前沿，引入全球更先进、更科学的理念革新和增长实践，全新角度更严谨、高效地驱动业务增长！',
+            isshow: false
+        },
+        {
+            title: "AMP Roadshow技术分享路演中国专场报名开始了！",
+            url: "https://mp.weixin.qq.com/s/SnVR14CXO0925IG4rABkxA",
+            description: 'Google 公司为了帮助更多的互联网公司加快对 AMP 技术的采纳，这个月开始在全球范围内十多个城市开始举办一个分享 AMP 技术的路演大会活动。来自 Google AMP 和网络技术团队的工程师们，将去全球很多城市进行技术分享。在这个全球分享活动中，Google 的技术专家还将专程来中国为中国的开发者们分享。今年的 12 月 5 日和 12 月 9 日，Google 开发技术推广部将在北京和上海分别举办一场 AMP Roadshow 活动。',
+            isshow: false
+        },
+        {
+            title: "知乎 x RxJava Meetup",
+            url: "https://segmentfault.com/e/1160000011193055",
+            description: 'Android 开发者都知道 RxJava，它给我们带来开发上的便利的同时，也会带来很多问题。知乎 Android 团队在最近半年多尝试引入 RxJava，我们想结合自己的经验和遇到的问题，和社区里的开发者们做一次以 RxJava 为主题的分享活动。由于场地限制，参加人数会限制在 25 人左右。',
+            isshow: false
+        },
+        {
+            title: "Google Play 成长之星 “Pizza Night” 北京站",
+            url: "http://t.cn/RC7gNiY?utm_source=androidweekly.cn&utm_medium=website",
+            description: 'Google Play “成长之星” 项目面向中小创业企业，助力开发者在全球市场赢得成功。在这里，您会了解到 “成长之星” 项目将如何帮助您的应用得到全方位的提升。本次活动 Google Play 大中华区开发者产品市场负责人黄继佳将为大家介绍 “成长之星” 项目，我们还请到了 “成长之星” 成员与出海行业大咖为我们分享出海经验。您将有机会与 Google Play 的专家直接交流。现在就来报名吧！期待到时与您相见！',
+            isshow: false
+        },
+        {
+            title: "Google Play 下半年政策更新重点及线上问答",
+            url: "http://t.cn/RC7rVkR?utm_source=androidweekly.cn&utm_medium=website",
+            description: '在 8 月 3 日发布了新一轮 Google Play 开发者政策更新，其中包含了我们推出的全新关于 赌博以及用户数据信息等政策更新。因此本月我们将重点解决这两条政策的细节，并且会着重分享下半年 Google Play 的政策重点注意事项。欢迎大家加入我们的课程并参与讨论。还等什么？赶快动动手指，报名课程吧！',
+            isshow: false
+        }
+	]
+};
+var greenapps = {
+    title: "加入公约的应用",
+    url: "https://green-android.org/app-certification.html?utm_source=AndroidWeeklys&utm_medium=join-green-android-plan",
+    url_name: "申请加入公约",
+    description: "秉承尊重用户隐私和保护设备体验的共同价值观，它们选择支持绿色应用公约：",
+    showCount: 5,
+    utm_info: "?utm_source=AndroidWeeklys&utm_medium=green_app_plan",
+    data: [
+        {
+            name: "酷安",
+            url: "http://www.coolapk.com/apk/com.coolapk.market",
+            icon: "https://green-android.org/assets/icons/com.coolapk.market.png",
+            description: '发现应用的乐趣',
+            isshow: true
+        },
+        {
+            name: "即刻",
+            url: "http://www.coolapk.com/apk/com.ruguoapp.jike",
+            icon: "https://green-android.org/assets/icons/com.ruguoapp.jike.png",
+            description: '基于兴趣的极简信息推送',
+            isshow: true
+        },
+        {
+            name: "知乎",
+            url: "http://www.coolapk.com/apk/com.zhihu.android",
+            icon: "https://green-android.org/assets/icons/com.zhihu.android.png",
+            description: '分享你的知识、经验和见解',
+            isshow: true
+        },
+        {
+            name: "AppSo",
+            url: "http://www.coolapk.com/apk/com.ifanr.appso",
+            icon: "https://green-android.org/assets/icons/com.ifanr.appso.png",
+            description: '智能手机更好用的秘密',
+            isshow: true
+        },
+        {
+            name: "Flipboard",
+            url: "http://www.coolapk.com/apk/flipboard.cn",
+            icon: "https://green-android.org/assets/icons/flipboard.cn.png",
+            description: '您的随身社交杂志',
+            isshow: true
+        },
+        {
+            name: "Cuto Wallpaper",
+            url: "http://coolapk.com/apk/com.sspai.cuto.android",
+            icon: "https://green-android.org/assets/icons/com.sspai.cuto.android.png",
+            description: '手工精挑细选每一张壁纸',
+            isshow: true
+        },
+        {
+            name: "Dir垃圾清理",
+            url: "http://coolapk.com/apk/kh.android.dir",
+            icon: "https://green-android.org/assets/icons/kh.android.dir.png",
+            description: '清爽的垃圾文件清理工具',
+            isshow: true
+        },
+        {
+            name: "煎蛋",
+            url: "http://coolapk.com/apk/com.danielstudio.app.wowtu",
+            icon: "https://green-android.org/assets/icons/com.danielstudio.app.wowtu.png",
+            description: '煎蛋·非官方高品质应用',
+            isshow: true
+        },
+        {
+            name: "最美创意",
+            url: "http://www.coolapk.com/apk/com.bugkr.beautyidea",
+            icon: "https://green-android.org/assets/icons/com.bugkr.beautyidea.png",
+            description: '屡获设计奖的短视频聚合',
+            isshow: true
+        },
+        {
+            name: "Mysplash",
+            url: "http://www.coolapk.com/apk/com.wangdaye.mysplash",
+            icon: "https://green-android.org/assets/icons/com.wangdaye.mysplash.png",
+            description: '轻巧的开源Unsplash客户端',
+            isshow: true
+        },
+        {
+            name: "花哪儿记账",
+            url: "http://www.coolapk.com/apk/com.kongzue.paywhere",
+            icon: "https://green-android.org/assets/icons/com.kongzue.paywhere.png",
+            description: '简单、纯粹的记账应用',
+            isshow: true
+        },
+        {
+            name: "潮汐",
+            url: "https://www.coolapk.com/apk/io.moreless.tide",
+            icon: "https://green-android.org/assets/icons/io.moreless.tide.png",
+            description: '让你专心的计时器',
+            isshow: true
+        }
+    ],
+    more: {
+        name: "更多应用",
+        url: "https://green-android.org/",
+        icon: "https://green-android.org/assets/images/logo.svg",
+        description: '更多遵循公约的应用',
+        isshow: true
+    }
+};
+
+var app_recommend_info = {
+    title: "Android 应用友链",
+    logo_link: "https://androidlinks.org",
+    logo_icon_url: "https://raw.githubusercontent.com/android-links/android-links.github.io/3dfb5ee9ac33c93c61f167539d485d3748338a62/assets/images/logo.png",
+    btn_url: "https://androidlinks.org#joined",
+    btn_name: "申请加入应用友链计划",
+    description: '个人开发者，开发应用不容易，推广应用更是难上加难，由 <a href="https://weibo.com/cmiao" target="_blank">@颜路__</a>  <a href="https://weibo.com/glzjin" target="_blank">@glzjin</a>  <a href="https://weibo.com/drak11t" target="_blank">@drakeet</a>  <a href="https://weibo.com/inferjay" target="_blank">@脉脉不得语</a>  联合发起的「Android 应用友链」计划就此应运而生，欢迎加入 Android 应用之间的互相推荐。',
+    utm_info: "?utm_source=AndroidWeeklys&utm_medium=app_recommend_info",
+    api_url: "https://recommend.wetolink.com/api/v2/app_recommend/pull",
+    showCount: 6,
+    data: []
+};
+</script>
+<script src="//ajax.microsoft.com/ajax/jquery.templates/beta1/jquery.tmpl.min.js" ></script>
+</head>
+<body class="home-template fixed-navbar">
+	<!-- start header -->
+<header class="main-header">
+	<nav class="navbar navbar-default navbar-fixed-top">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+					<span class="sr-only">切换导航</span>
+					<i class="material-icons">&#xE5D2;</i>
+				</button>
+				<!-- start logo -->
+				<a class="navbar-brand image-logo" href="https://androidweekly.io"><img src="/content/images/2018/01/apple-touch-icon-114x114.png" alt="Android 开发技术周报"></a>
+				<!-- end logo -->
+			</div>
+			<div class="search-toggle-wrap pull-right">
+				<a href="" class="search-toggle"><i class="material-icons">&#xE8B6;</i></i></a>
+			</div>
+			<div id="navbar" class="navbar-collapse collapse">
+	<ul class="nav navbar-nav navbar-right">
+		<li class=" current-menu-item" ><a href="https://androidweekly.io/">首页</a></li>
+		<li class="android-pie " ><a href="https://androidweekly.io/android-pie/?utm_source=navbar&utm_medium=website">Android Pie</a></li>
+		<li class=" " ><a href="https://developer.android.google.cn/samples/?utm_source=androidweekly.cn&utm_medium=website-navbar">示例</a></li>
+		<li class=" " ><a href="https://materialdoc.cn/?utm_source=androidweekly.cn&utm_medium=website-navbar">设计</a></li>
+		<li class=" " ><a href="https://androidweekly.io/tag/androiddevspecialweekly/">特刊</a></li>
+		<li class=" " ><a href="https://www.androiddevtools.cn/?utm_source=androidweekly.cn&utm_medium=website-navbar">工具</a></li>
+		<li class=" " ><a href="https://androidweekly.io/events/">活动</a></li>
+		<li class=" " ><a href="https://androidweekly.io/cool-jobs/">酷工作</a></li>
+		<li class=" " ><a href="https://form.chinagdg.org/forms/d/e/1FAIpQLSfDyUqAxB76LlbJeUvZVG8wqxTk1z0lAVMBCKg4sck6_OeHOQ/viewform">投稿</a></li>
+		<li class=" " ><a href="https://androidweekly.io/gay-friends/">好基友们</a></li>
+		<li class=" " ><a href="https://androidweekly.io/donate/">捐赠</a></li>
+		<li class=" " ><a href="https://androidweekly.io/about/">关于</a></li>
+	</ul>
 </div>
-        <script language="javascript" type="text/javascript" src="//img.ithome.com/file/js/ajax.js"></script>
-    </body>
+		</div>
+	</nav>
+</header>
+<!-- end header -->
+	
+<div class="cover cover-home" style="background-image: url(/content/images/2018/11/home_cover.jpg);">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-8 col-md-offset-2">
+				<h1 class="welcome-message">Android 开发技术周报</h1>
+				<p class="h4 description">Write the code, Change the world</p>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="main-content-area">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-4 col-sm-6">
+				<article class="card post-wrap post tag-androiddevweekly">
+					<div class="card-header ">
+						<a href="/android-dev-weekly-issue-223/">
+							<div class="featured-image-container"  style="background-image: url(/content/images/2019/04/android-dev-weekly-issue-223-1.jpg);">
+							</div>
+						</a>
+						<div class="author">
+							<a href="/author/inferjay/">
+								<img  class="avatar" src="//www.gravatar.com/avatar/77bcd5f784ed2eb8865cf340d416a42a?s&#x3D;250&amp;d&#x3D;mm&amp;r&#x3D;x" alt="脉脉不得语" nopin="nopin">
+								<span class="name">脉脉不得语</span>
+							</a>
+						</div>
+					</div>
+					<div class="content">
+						<h2 class="h4 title"><a href="/android-dev-weekly-issue-223/">Android 开发技术周报 Issue#223</a></h2>
+						<div class="meta">
+							<span  class="date"><i class="material-icons">&#xE192;</i>April 08, 2019</span>
+							<span class="Comment"><i class="material-icons">&#xE0B9;</i><a href="/android-dev-weekly-issue-223/#disqus_thread">0 条评论</a></span>
+							<span class="tag-list"><i class="material-icons">&#xE2C8;</i><a href="/tag/androiddevweekly/">AndroidDevWeekly</a></span>
+						</div>
+						<div class="post-entry">
+							<h3 id="">新闻</h3>
+<ol>
+<li>
+<p><a href="https://www.cnbeta.com/articles/tech/834733.htm">谷歌将于10月23日举办安卓全球开发者峰会：首秀Android R?</a></p>
+</li>
+<li>
+<p><a href="https://www.cnbeta.com/articles/tech/834601.htm">Android 10.0手势功能升级：类似于苹果3D Touch</a></p>
+</li>
+<li>
+<p><a href="https://www.cnbeta.com/articles/tech/834561.htm">谷歌的Pixel智能手表细节通过专利图泄露</a></p>
+</li>
+<li>
+<p><a href="https://www.cnbeta.com/articles/tech/834535.htm">Android Q将提高未经核实应用的安装安全性 同时更繁琐</a></p>
+</li>
+<li>
+<p><a href="https://www.cnbeta.com/articles/tech/834411.htm">Collabora发布Spurv项目 可在Wayland桌面上运行Android应用程序</a></p>
+</li>
+<li>
+<p><a href="https://www.cnbeta.com/articles/tech/834029.htm">2019年4月Android安全补丁发布：共计修复89处漏洞</a></p>
+</li>
+<li>
+<p><a href="https://www.cnbeta.com/articles/tech/833999.htm">Android Q第二个测试版发布：加大对折叠屏测试力度</a></p>
+</li>
+<li>
+<p><a href="https://www.cnbeta.com/articles/tech/833949.htm">Q”弹可口 新一代Android Q新功能抢先看</a></p>
+</li>
+<li>
+<p><a href="https://www.cnbeta.com/articles/tech/833577.htm">谷歌精简了 AOSP 的一些自带应用</a></p>
+</li>
+</ol>
+<h3 id="">教程</h3>
+<ol>
+<li>
+<p><a href="https://fucknmb.com/2019/04/04/Android-Q-BaseDexClassLoader%E5%8F%98%E5%8A%A8/?from=timeline">Android Q</a></p></li></ol>
+						</div>
+					</div>
+					<div class="card-footer">
+						<a href="/android-dev-weekly-issue-223/" class="parmalink ripple">查看更多 <i class="material-icons">&#xE5C8;</i></a>
+						<div class="share-wrap pull-right">
+	<i class="material-icons share-button ripple">&#xE80D;</i>
+	<div class="share-link-wrap">
+		<!-- facebook -->
+		<a class="facebook ripple" href="https://www.facebook.com/sharer/sharer.php?u=https://androidweekly.io/android-dev-weekly-issue-223/" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;"><i class="fa fa-facebook"></i> Facebook</a>
+		<!-- twitter -->
+		<a class="twitter ripple" href="https://twitter.com/share?text=Android%20%E5%BC%80%E5%8F%91%E6%8A%80%E6%9C%AF%E5%91%A8%E6%8A%A5%20Issue%23223&amp;url=https://androidweekly.io/android-dev-weekly-issue-223/" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;"><i class="fa fa-twitter"></i> Twitter</a>
+		<!-- google plus -->
+		<a class="google-plus ripple" href="https://plus.google.com/share?url=https://androidweekly.io/android-dev-weekly-issue-223/" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;"><i class="fa fa-google-plus"></i> Google plus</a>
+	</div>
+</div>					</div>
+				</article>
+			</div>
+			<div class="col-md-4 col-sm-6">
+				<article class="card post-wrap post tag-androiddevweekly">
+					<div class="card-header ">
+						<a href="/android-dev-weekly-issue-222/">
+							<div class="featured-image-container"  style="background-image: url(/content/images/2019/04/android-dev-weekly-issue-222.jpg);">
+							</div>
+						</a>
+						<div class="author">
+							<a href="/author/inferjay/">
+								<img  class="avatar" src="//www.gravatar.com/avatar/77bcd5f784ed2eb8865cf340d416a42a?s&#x3D;250&amp;d&#x3D;mm&amp;r&#x3D;x" alt="脉脉不得语" nopin="nopin">
+								<span class="name">脉脉不得语</span>
+							</a>
+						</div>
+					</div>
+					<div class="content">
+						<h2 class="h4 title"><a href="/android-dev-weekly-issue-222/">Android 开发技术周报 Issue#222</a></h2>
+						<div class="meta">
+							<span  class="date"><i class="material-icons">&#xE192;</i>April 01, 2019</span>
+							<span class="Comment"><i class="material-icons">&#xE0B9;</i><a href="/android-dev-weekly-issue-222/#disqus_thread">0 条评论</a></span>
+							<span class="tag-list"><i class="material-icons">&#xE2C8;</i><a href="/tag/androiddevweekly/">AndroidDevWeekly</a></span>
+						</div>
+						<div class="post-entry">
+							<h3 id="">新闻</h3>
+<ol>
+<li>
+<p><a href="https://mp.weixin.qq.com/s/i1W1SIFIc1ePq8E-b8qG8A">重要更新 | 目标 API 等级 2019 年新规定</a></p>
+</li>
+<li>
+<p><a href="https://www.cnbeta.com/articles/tech/831779.htm">Android Q公测版本在初代Pixel智能机上跑得飞快</a></p>
+</li>
+<li>
+<p><a href="https://www.cnbeta.com/articles/tech/831685.htm">谷歌欲将Google Assistant与Android整合</a></p>
+</li>
+<li>
+<p><a href="https://www.cnbeta.com/articles/tech/831301.htm">研究表明预装Android应用程序会带来巨大的安全和隐私风险</a></p>
+</li>
+</ol>
+<h3 id="">教程</h3>
+<ol>
+<li>
+<p><a href="https://mp.weixin.qq.com/s/DzZDOUn0fb2VfQXvO79MCQ">Android Q 让用户优雅地管理位置权限</a></p>
+</li>
+<li>
+<p><a href="https://www.jianshu.com/p/1fa113b7ff64">Android 8.0 LinearLayout 源码解析</a></p>
+</li>
+<li>
+<p><a href="https://mp.weixin.qq.com/s/uvrkAvbfWuDYf7SWX_dJBA">Android app反调试与代码保护的一些基本方案</a></p>
+</li>
+</ol>
+<h3 id="app">开源库 &amp; App</h3>
+<ol>
+<li>
+<p><a href="https://github.com/adroitandroid/Near">Near</a></p>
+<p>使用 TCP 套接字进行传输的</p></li></ol>
+						</div>
+					</div>
+					<div class="card-footer">
+						<a href="/android-dev-weekly-issue-222/" class="parmalink ripple">查看更多 <i class="material-icons">&#xE5C8;</i></a>
+						<div class="share-wrap pull-right">
+	<i class="material-icons share-button ripple">&#xE80D;</i>
+	<div class="share-link-wrap">
+		<!-- facebook -->
+		<a class="facebook ripple" href="https://www.facebook.com/sharer/sharer.php?u=https://androidweekly.io/android-dev-weekly-issue-222/" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;"><i class="fa fa-facebook"></i> Facebook</a>
+		<!-- twitter -->
+		<a class="twitter ripple" href="https://twitter.com/share?text=Android%20%E5%BC%80%E5%8F%91%E6%8A%80%E6%9C%AF%E5%91%A8%E6%8A%A5%20Issue%23222&amp;url=https://androidweekly.io/android-dev-weekly-issue-222/" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;"><i class="fa fa-twitter"></i> Twitter</a>
+		<!-- google plus -->
+		<a class="google-plus ripple" href="https://plus.google.com/share?url=https://androidweekly.io/android-dev-weekly-issue-222/" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;"><i class="fa fa-google-plus"></i> Google plus</a>
+	</div>
+</div>					</div>
+				</article>
+			</div>
+			<div class="col-md-4 col-sm-6">
+				<article class="card post-wrap post tag-androiddevweekly">
+					<div class="card-header ">
+						<a href="/android-dev-weekly-issue-221/">
+							<div class="featured-image-container"  style="background-image: url(/content/images/2019/03/android-dev-weekly-issue-221.jpg);">
+							</div>
+						</a>
+						<div class="author">
+							<a href="/author/inferjay/">
+								<img  class="avatar" src="//www.gravatar.com/avatar/77bcd5f784ed2eb8865cf340d416a42a?s&#x3D;250&amp;d&#x3D;mm&amp;r&#x3D;x" alt="脉脉不得语" nopin="nopin">
+								<span class="name">脉脉不得语</span>
+							</a>
+						</div>
+					</div>
+					<div class="content">
+						<h2 class="h4 title"><a href="/android-dev-weekly-issue-221/">Android 开发技术周报 Issue#221</a></h2>
+						<div class="meta">
+							<span  class="date"><i class="material-icons">&#xE192;</i>March 25, 2019</span>
+							<span class="Comment"><i class="material-icons">&#xE0B9;</i><a href="/android-dev-weekly-issue-221/#disqus_thread">0 条评论</a></span>
+							<span class="tag-list"><i class="material-icons">&#xE2C8;</i><a href="/tag/androiddevweekly/">AndroidDevWeekly</a></span>
+						</div>
+						<div class="post-entry">
+							<h3 id="">新闻</h3>
+<ol>
+<li>
+<p><a href="https://www.cnbeta.com/articles/tech/830417.htm">Android Pie如何快捷分享文件至特定App</a></p>
+</li>
+<li>
+<p><a href="https://www.cnbeta.com/articles/tech/829475.htm">谷歌招聘Node工程师 新系统Fuchsia有望支持JS</a></p>
+</li>
+<li>
+<p><a href="https://www.cnbeta.com/articles/tech/829371.htm">Android Q要来了 但很可能又是一次鸡肋更新</a></p>
+</li>
+<li>
+<p><a href="https://www.cnbeta.com/articles/tech/829287.htm">KaiOS势头迅猛引谷歌眼红，安卓或将进军功能机市场</a></p>
+</li>
+<li>
+<p><a href="https://www.cnbeta.com/articles/tech/828603.htm">Android Q开始支持对所有通知使用聊天气泡</a></p>
+</li>
+</ol>
+<h3 id="">教程</h3>
+<ol>
+<li>
+<p><a href="https://mp.weixin.qq.com/s/W38aauoCEEUbL8KvUkb_Rw">Android技术架构演进与未来</a></p>
+</li>
+<li>
+<p><a href="https://www.jianshu.com/p/aef252db9869"> Gson源码解析和它的设计模式</a></p>
+</li>
+<li>
+<p><a href="https://mp.weixin.qq.com/s/RS7O7prvkCvKyxkK3YQxtA">Litho的使用及原理剖析</a></p>
+</li>
+<li>
+<p><a href="https://mp.weixin.qq.com/s/x6njiJWqN-4lOJy158_UYA">你真的了解webview么？</a></p>
+</li>
+</ol>
+<h3 id="app">开源库 &amp; App</h3>
+<ol>
+<li>
+<p><a href="https://github.com/naver/svc">SVC</a></p>
+<p>Easy and intuitive pattern library for Android</p>
+</li>
+<li>
+<p><a href="https://github.com/AlShevelev/music-visualization">Music visualization</a></p></li></ol>
+						</div>
+					</div>
+					<div class="card-footer">
+						<a href="/android-dev-weekly-issue-221/" class="parmalink ripple">查看更多 <i class="material-icons">&#xE5C8;</i></a>
+						<div class="share-wrap pull-right">
+	<i class="material-icons share-button ripple">&#xE80D;</i>
+	<div class="share-link-wrap">
+		<!-- facebook -->
+		<a class="facebook ripple" href="https://www.facebook.com/sharer/sharer.php?u=https://androidweekly.io/android-dev-weekly-issue-221/" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;"><i class="fa fa-facebook"></i> Facebook</a>
+		<!-- twitter -->
+		<a class="twitter ripple" href="https://twitter.com/share?text=Android%20%E5%BC%80%E5%8F%91%E6%8A%80%E6%9C%AF%E5%91%A8%E6%8A%A5%20Issue%23221&amp;url=https://androidweekly.io/android-dev-weekly-issue-221/" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;"><i class="fa fa-twitter"></i> Twitter</a>
+		<!-- google plus -->
+		<a class="google-plus ripple" href="https://plus.google.com/share?url=https://androidweekly.io/android-dev-weekly-issue-221/" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;"><i class="fa fa-google-plus"></i> Google plus</a>
+	</div>
+</div>					</div>
+				</article>
+			</div>
+			<div class="col-md-4 col-sm-6">
+				<article class="card post-wrap post tag-androiddevweekly">
+					<div class="card-header ">
+						<a href="/android-dev-weekly-issue-220/">
+							<div class="featured-image-container"  style="background-image: url(/content/images/2019/03/android-dev-weekly-issue-220.jpg);">
+							</div>
+						</a>
+						<div class="author">
+							<a href="/author/inferjay/">
+								<img  class="avatar" src="//www.gravatar.com/avatar/77bcd5f784ed2eb8865cf340d416a42a?s&#x3D;250&amp;d&#x3D;mm&amp;r&#x3D;x" alt="脉脉不得语" nopin="nopin">
+								<span class="name">脉脉不得语</span>
+							</a>
+						</div>
+					</div>
+					<div class="content">
+						<h2 class="h4 title"><a href="/android-dev-weekly-issue-220/">Android 开发技术周报 Issue#220</a></h2>
+						<div class="meta">
+							<span  class="date"><i class="material-icons">&#xE192;</i>March 19, 2019</span>
+							<span class="Comment"><i class="material-icons">&#xE0B9;</i><a href="/android-dev-weekly-issue-220/#disqus_thread">0 条评论</a></span>
+							<span class="tag-list"><i class="material-icons">&#xE2C8;</i><a href="/tag/androiddevweekly/">AndroidDevWeekly</a></span>
+						</div>
+						<div class="post-entry">
+							<h3 id="">新闻</h3>
+<ol>
+<li>
+<p><a href="https://www.cnbeta.com/articles/tech/828389.htm">Android Q的手势导航更接近iPhone，你怎么看？</a></p>
+</li>
+<li>
+<p><a href="https://www.cnbeta.com/articles/tech/828209.htm">Magisk率先对Android Q Beta 1实现ROOT：支持一代二代Pixel</a></p>
+</li>
+<li>
+<p><a href="https://www.cnbeta.com/articles/tech/828147.htm">谷歌推出开发者门户网站：让开发Android游戏变得更简单</a></p>
+</li>
+<li>
+<p><a href="https://www.cnbeta.com/articles/tech/828033.htm">Google Play商店正在将应用图标标准化</a></p>
+</li>
+<li>
+<p><a href="https://www.cnbeta.com/articles/tech/827727.htm">为增强安全性 谷歌将对Android剪贴板应用痛下杀手</a></p>
+</li>
+<li>
+<p><a href="https://www.cnbeta.com/articles/tech/827287.htm">Android Q的桌面模式 似乎来得有点晚</a></p>
+</li>
+<li>
+<p><a href="https://www.cnbeta.com/articles/tech/827171.htm">一文快速了解Android Q Beta 1都有哪些新功能</a></p>
+</li>
+</ol>
+<h3 id="">教程</h3>
+<ol>
+<li>
+<p><a href="https://feng.moe/archives/47/">Android Q 存储机制大变化</a></p>
+</li>
+<li>
+<p><a href="https://mp.weixin.qq.com/s/a0in4DqB8Bay046knkRr1g">网易新闻客户端Flutter混合开发实践</a></p>
+</li>
+<li>
+<p><a href="https://mp.weixin.qq.com/s/-2z7lAGQ3GeSqFfkPGPWNA">Android 架构组件 -</a></p></li></ol>
+						</div>
+					</div>
+					<div class="card-footer">
+						<a href="/android-dev-weekly-issue-220/" class="parmalink ripple">查看更多 <i class="material-icons">&#xE5C8;</i></a>
+						<div class="share-wrap pull-right">
+	<i class="material-icons share-button ripple">&#xE80D;</i>
+	<div class="share-link-wrap">
+		<!-- facebook -->
+		<a class="facebook ripple" href="https://www.facebook.com/sharer/sharer.php?u=https://androidweekly.io/android-dev-weekly-issue-220/" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;"><i class="fa fa-facebook"></i> Facebook</a>
+		<!-- twitter -->
+		<a class="twitter ripple" href="https://twitter.com/share?text=Android%20%E5%BC%80%E5%8F%91%E6%8A%80%E6%9C%AF%E5%91%A8%E6%8A%A5%20Issue%23220&amp;url=https://androidweekly.io/android-dev-weekly-issue-220/" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;"><i class="fa fa-twitter"></i> Twitter</a>
+		<!-- google plus -->
+		<a class="google-plus ripple" href="https://plus.google.com/share?url=https://androidweekly.io/android-dev-weekly-issue-220/" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;"><i class="fa fa-google-plus"></i> Google plus</a>
+	</div>
+</div>					</div>
+				</article>
+			</div>
+			<div class="col-md-4 col-sm-6">
+				<article class="card post-wrap post tag-androiddevweekly">
+					<div class="card-header ">
+						<a href="/android-dev-weekly-issue-219/">
+							<div class="featured-image-container"  style="background-image: url(/content/images/2019/03/android-dev-weekly-issue-219.jpg);">
+							</div>
+						</a>
+						<div class="author">
+							<a href="/author/inferjay/">
+								<img  class="avatar" src="//www.gravatar.com/avatar/77bcd5f784ed2eb8865cf340d416a42a?s&#x3D;250&amp;d&#x3D;mm&amp;r&#x3D;x" alt="脉脉不得语" nopin="nopin">
+								<span class="name">脉脉不得语</span>
+							</a>
+						</div>
+					</div>
+					<div class="content">
+						<h2 class="h4 title"><a href="/android-dev-weekly-issue-219/">Android 开发技术周报 Issue#219</a></h2>
+						<div class="meta">
+							<span  class="date"><i class="material-icons">&#xE192;</i>March 11, 2019</span>
+							<span class="Comment"><i class="material-icons">&#xE0B9;</i><a href="/android-dev-weekly-issue-219/#disqus_thread">0 条评论</a></span>
+							<span class="tag-list"><i class="material-icons">&#xE2C8;</i><a href="/tag/androiddevweekly/">AndroidDevWeekly</a></span>
+						</div>
+						<div class="post-entry">
+							<h3 id="">新闻</h3>
+<ol>
+<li>
+<p><a href="https://www.cnbeta.com/articles/tech/825829.htm">谷歌工程师确认5月的Android Q Beta公测将纳入更多厂商</a></p>
+</li>
+<li>
+<p><a href="https://www.cnbeta.com/articles/tech/825283.htm">用广告换Android应用奖励 这件事谷歌要亲自做了</a></p>
+</li>
+<li>
+<p><a href="https://www.cnbeta.com/articles/tech/824981.htm">主攻简单和易用性 谷歌TensorFlow迎来2.0版本</a></p>
+</li>
+<li>
+<p><a href="https://www.cnbeta.com/articles/tech/824929.htm">报道称Google正致力于在Android中安全地存储数字驾照</a></p>
+</li>
+<li>
+<p><a href="https://www.cnbeta.com/articles/tech/823953.htm">尚未正式发布的Android Q系统：已经被Magisk作者给Root了</a></p>
+</li>
+</ol>
+<h3 id="">教程</h3>
+<ol>
+<li>
+<p><a href="https://mp.weixin.qq.com/s/0uxeWS-9-EGUMFDKkLotQg">图像快速修复技术</a></p>
+</li>
+<li>
+<p><a href="https://mp.weixin.qq.com/s/v-wwruadJntX1n-YuMPC7g">码上用它开始Flutter混合开发——FlutterBoost</a></p>
+</li>
+</ol>
+<h3 id="app">开源库 &amp; App</h3>
+<ol>
+<li>
+<p><a href="https://github.com/alibaba/fish-redux">Fish Redux</a></p>
+<p>一个基于 Redux 数据管理的组装式 flutter 应用框架， 它特别适用于构建中大型的复杂应用。</p>
+</li>
+<li>
+<p><a href="https://github.com/alibaba/flutter_boost">FlutterBoost</a></p>
+<p>新一代Flutter-Native混合解决方案。</p></li></ol>
+						</div>
+					</div>
+					<div class="card-footer">
+						<a href="/android-dev-weekly-issue-219/" class="parmalink ripple">查看更多 <i class="material-icons">&#xE5C8;</i></a>
+						<div class="share-wrap pull-right">
+	<i class="material-icons share-button ripple">&#xE80D;</i>
+	<div class="share-link-wrap">
+		<!-- facebook -->
+		<a class="facebook ripple" href="https://www.facebook.com/sharer/sharer.php?u=https://androidweekly.io/android-dev-weekly-issue-219/" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;"><i class="fa fa-facebook"></i> Facebook</a>
+		<!-- twitter -->
+		<a class="twitter ripple" href="https://twitter.com/share?text=Android%20%E5%BC%80%E5%8F%91%E6%8A%80%E6%9C%AF%E5%91%A8%E6%8A%A5%20Issue%23219&amp;url=https://androidweekly.io/android-dev-weekly-issue-219/" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;"><i class="fa fa-twitter"></i> Twitter</a>
+		<!-- google plus -->
+		<a class="google-plus ripple" href="https://plus.google.com/share?url=https://androidweekly.io/android-dev-weekly-issue-219/" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;"><i class="fa fa-google-plus"></i> Google plus</a>
+	</div>
+</div>					</div>
+				</article>
+			</div>
+			<div class="col-md-4 col-sm-6">
+				<article class="card post-wrap post tag-androiddevweekly">
+					<div class="card-header ">
+						<a href="/android-dev-weekly-issue-218/">
+							<div class="featured-image-container"  style="background-image: url(/content/images/2019/03/android-dev-weekly-issue-218.jpg);">
+							</div>
+						</a>
+						<div class="author">
+							<a href="/author/inferjay/">
+								<img  class="avatar" src="//www.gravatar.com/avatar/77bcd5f784ed2eb8865cf340d416a42a?s&#x3D;250&amp;d&#x3D;mm&amp;r&#x3D;x" alt="脉脉不得语" nopin="nopin">
+								<span class="name">脉脉不得语</span>
+							</a>
+						</div>
+					</div>
+					<div class="content">
+						<h2 class="h4 title"><a href="/android-dev-weekly-issue-218/">Android 开发技术周报 Issue#218</a></h2>
+						<div class="meta">
+							<span  class="date"><i class="material-icons">&#xE192;</i>March 04, 2019</span>
+							<span class="Comment"><i class="material-icons">&#xE0B9;</i><a href="/android-dev-weekly-issue-218/#disqus_thread">0 条评论</a></span>
+							<span class="tag-list"><i class="material-icons">&#xE2C8;</i><a href="/tag/androiddevweekly/">AndroidDevWeekly</a></span>
+						</div>
+						<div class="post-entry">
+							<h3 id="">新闻</h3>
+<ol>
+<li>
+<p><a href="https://www.cnbeta.com/articles/soft/822973.htm">Dart 2.2 发布 谷歌推出的结构化编程语言</a></p>
+</li>
+<li>
+<p><a href="https://www.cnbeta.com/articles/soft/822373.htm">Flutter 1.2发布：添加应用内支付和App Bundles</a></p>
+</li>
+<li>
+<p><a href="https://mp.weixin.qq.com/s/YxFH8wRfj5gnX-XjkZWbmA">前置摄像头，人脸检测，Google ARCore 1.7 更新有点多！</a></p>
+</li>
+<li>
+<p><a href="https://www.cnbeta.com/articles/tech/822315.htm">网页端Google Duo正式上线：可在浏览器上视频聊天</a></p>
+</li>
+<li>
+<p><a href="https://www.cnbeta.com/articles/tech/822365.htm">Android Messages整合Google Assistant 短信约会更方便了</a></p>
+</li>
+<li>
+<p><a href="https://www.cnbeta.com/articles/tech/821759.htm">Android One更新品牌LOGO 双色设计更适应需求</a></p>
+</li>
+<li>
+<p><a href="https://www.cnbeta.com/articles/tech/821693.htm">新版Android已支持FIDO2标准 免密登录应用或网站</a></p></li></ol>
+						</div>
+					</div>
+					<div class="card-footer">
+						<a href="/android-dev-weekly-issue-218/" class="parmalink ripple">查看更多 <i class="material-icons">&#xE5C8;</i></a>
+						<div class="share-wrap pull-right">
+	<i class="material-icons share-button ripple">&#xE80D;</i>
+	<div class="share-link-wrap">
+		<!-- facebook -->
+		<a class="facebook ripple" href="https://www.facebook.com/sharer/sharer.php?u=https://androidweekly.io/android-dev-weekly-issue-218/" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;"><i class="fa fa-facebook"></i> Facebook</a>
+		<!-- twitter -->
+		<a class="twitter ripple" href="https://twitter.com/share?text=Android%20%E5%BC%80%E5%8F%91%E6%8A%80%E6%9C%AF%E5%91%A8%E6%8A%A5%20Issue%23218&amp;url=https://androidweekly.io/android-dev-weekly-issue-218/" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;"><i class="fa fa-twitter"></i> Twitter</a>
+		<!-- google plus -->
+		<a class="google-plus ripple" href="https://plus.google.com/share?url=https://androidweekly.io/android-dev-weekly-issue-218/" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;"><i class="fa fa-google-plus"></i> Google plus</a>
+	</div>
+</div>					</div>
+				</article>
+			</div>
+		</div>
+		<!-- start pagination -->
+<div class="row">
+	<div class="col-sm-12">
+		<!-- start pagination -->
+		<div class="pagination-wrap">
+			<div class="pagination clearfix" role="navigation">
+		        <span class="page-number">第 1 页／共 39 页</span>
+		        <a class="older-posts ripple" href="/page/2/">往期周报 <i class="material-icons">&#xE5C8;</i></a>
+		    </div>
+		</div>
+		<!-- end pagination -->
+	</div>
+</div>
+<!-- end pagination -->
+	</div>
+</div>
+
+	<!-- start footer -->
+<footer class="main-footer">
+	<div class="widget-newsletter">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-6">
+				<h4 class="h3 title">订阅周报</h4>
+				每周将最新一期的周报发送到您的邮箱，您可以随时取消订阅
+			</div>
+			<div class="col-sm-6">
+				<div id="mc_embed_signup">
+					<form action="#" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" novalidate>
+						<div class="input-group">
+							<input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL" >
+							<span class="bar"></span>
+							<label>你的邮箱</label>
+							<button type="submit" class="submit-button">
+								<i class="material-icons">&#xE163;</i>
+							</button>
+						</div>
+					</form>
+					<div id="message"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>	<div class="footer-widget-area">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-6 col-md-4">
+					<!-- start widget -->
+<div class="widget">
+	<h4 class="title">最近发布的</h4>
+	<div class="content recent-post">
+		<div class="recent-single-post clearfix have-image">
+			<a href="/android-dev-weekly-issue-223/" class="post-title">
+				<div class="post-thumb pull-left" style="background-image:url(/content/images/2019/04/android-dev-weekly-issue-223-1.jpg)"></div>
+				<div class="post-info"><h4 class="h5">Android 开发技术周报 Issue#223</h4><div class="date"><i class="material-icons">&#xE192;</i>April 08, 2019</div></div>
+			</a>
+		</div>
+		<div class="recent-single-post clearfix have-image">
+			<a href="/android-dev-weekly-issue-222/" class="post-title">
+				<div class="post-thumb pull-left" style="background-image:url(/content/images/2019/04/android-dev-weekly-issue-222.jpg)"></div>
+				<div class="post-info"><h4 class="h5">Android 开发技术周报 Issue#222</h4><div class="date"><i class="material-icons">&#xE192;</i>April 01, 2019</div></div>
+			</a>
+		</div>
+		<div class="recent-single-post clearfix have-image">
+			<a href="/android-dev-weekly-issue-221/" class="post-title">
+				<div class="post-thumb pull-left" style="background-image:url(/content/images/2019/03/android-dev-weekly-issue-221.jpg)"></div>
+				<div class="post-info"><h4 class="h5">Android 开发技术周报 Issue#221</h4><div class="date"><i class="material-icons">&#xE192;</i>March 25, 2019</div></div>
+			</a>
+		</div>
+		<div class="recent-single-post clearfix have-image">
+			<a href="/android-dev-weekly-issue-220/" class="post-title">
+				<div class="post-thumb pull-left" style="background-image:url(/content/images/2019/03/android-dev-weekly-issue-220.jpg)"></div>
+				<div class="post-info"><h4 class="h5">Android 开发技术周报 Issue#220</h4><div class="date"><i class="material-icons">&#xE192;</i>March 19, 2019</div></div>
+			</a>
+		</div>
+	</div>
+</div>
+<!-- end widget -->				</div>
+				<div class="col-sm-6 col-md-4">
+					<div class="widget">
+	<h4 class="title">标签云</h4>
+	<div class="content tag-cloud">
+		<a href="/tag/androiddevspecialweekly/">AndroidDevSpecialWeekly</a><a href="/tag/androiddevweekly/">AndroidDevWeekly</a><a href="/tag/jobs/">Jobs</a><a href="/tag/kotlin/">Kotlin</a><a href="/tag/reactnative/">ReactNative</a><a href="/tag/rxandroid/">RxAndroid</a><a href="/tag/rxjava/">RxJava</a>
+	</div>
+</div>
+					<div class="widget">
+	<h4 class="title">关注</h4>
+	<div class="content clearfix">
+		<ul class="social">
+			<!-- start social links -->
+			<!-- replace the # with your own profile link address -->
+			<li><a href="http://weibo.com/234959219/" class="weibo"><i class="fa fa-weibo"></i></a></li>
+			<li><a href="https://twitter.com/inferjay" class="twitter"><i class="fa fa-twitter"></i></a></li>
+			<li><a href="https://plus.google.com/u/0/+HCZHANG" class="google-plus"><i class="fa fa-google-plus"></i></a></li>
+			<li><a href="https://www.instagram.com/inferjay/"class="instagram"><i class="fa fa-instagram"></i></a></li>
+			<li><a href="https://androidweekly.io/rss/" class="rss"><i class="fa fa-rss"></i></a></li>
+			<!-- end social links -->
+		</ul>
+	</div>
+</div>
+					
+				</div>
+				<div class="col-sm-6 col-md-4">
+					<!-- start widget -->
+<div class="widget">
+	<h4 class="title">关于</h4>
+	<div class="content">
+		汇集互联网上每周 Android 开发的技术文章、开源项目、开发工具、视频教程、Android 设计教程、设计资源等。
+		推荐资源请<a href="">戳我</a>或者微博上转发并<a href="">@脉脉不嘚語</a>，欢迎大家推荐自己在 Android 开发过程中用的好用的工具、看到的好的技术文章、教程、用到设计素材。
+	</div>
+</div>
+<!-- end widget -->
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="footer-bottom copyright-area">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="copyright">
+					&copy; 2019 <a href="https://androidweekly.io">Android 开发技术周报</a>. All right Reserved - Powered by <a href="http://ghost.org" target="blank">Ghost</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div></footer>
+<!-- end footer -->
+<a href="#" id="back-to-top"><i class="material-icons">&#xE5CE;</i></a>
+<div class="search-popup">
+	<div class="close-button">
+		<i class="material-icons">&#xE5C9;</i>
+	</div>
+	<div class="container popup-inner">
+		<div class="row">
+			<div class="col-sm-12">
+				<form>
+					<div class="input-group">
+                        <input type="text" class="required" id="search-input">
+                        <span class="bar"></span>
+                        <label>输入你要搜索的关键字</label>
+                    </div>
+				</form>
+				<div id="search-results">
+				</div>
+			</div>
+		</div>
+	</div>
+</div><!-- add target attr to all a tag -->
+ <script type="text/javascript">
+        //bind a click
+        var utm_info = "utm_source=androidweekly.io&utm_medium=website";
+        $(document).bind('DOMNodeInserted', function(event) {
+            $('.post-entry').find('a[href^="http"]').each(
+                function(){
+                    if (!$(this).attr('target')) {
+                        $(this).attr('target', '_blank')
+                    }
+                    var url = $(this).attr('href');
+                    if (url.indexOf("https://androidweekly.cn") != -1 || url.indexOf("https://androidweekly.io") != -1 || url.indexOf("https://www.androidweekly.io") != -1 || url.indexOf("https://www.androidweekly.cn") != -1) {
+                        $(this).attr('target', '_self')
+                    } else {
+                        if (url.indexOf(utm_info) == -1) {
+                          if (url.indexOf("&") == -1) {
+                              if (url.indexOf("?") == -1 && url.indexOf("/?") == -1) {
+                        		url += '?';
+                              } else {
+                              	url += '&';
+                              }
+                          } else {
+                                url += '&';
+                         }
+                    	 url += utm_info;
+                         $(this).attr('href', url);
+                       }
+                    }
+                }
+            );
+        });
+</script>
+<!--
+<script>
+	$('#mc_embed_signup > form').remove();
+    $('#message').text('Email 订阅入口暂时关闭，之后将不定期开放!!!').css({color: "#FF5722"});
+</script>
+
+
+<script>
+	new SmoothScroll('a[href*="#"]', {easing: 'linear'});
+</script>
+-->
+
+<!-- Start Google Analytics -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-52369435-3', 'auto');
+  ga('send', 'pageview');
+  var trackOutboundLink = function(url,category, action) {
+    var redirectTriggered = false;
+    ga('send', 'event', category, action, url, {'hitCallback':
+        function() {
+            redirectTriggered = true;
+            window.open(url);
+        }
+    });
+};
+</script>
+ <!-- End Google Analytics -->
+
+<script>
+    Array.prototype.randomDiffElement = function(last) {
+        if (this.length == 0) {
+            return;
+        } else if (this.length == 1) {
+            return this[0];
+        } else {
+            var num = 0;
+            do {
+                num = Math.floor(Math.random() * this.length);
+            } while (Array.isArray(last) ? last.includes(this[num]) : this[num] == last);
+            return this[num];
+        }
+    };
+    var isShow = function isShow(value) {
+        return value && value.isshow;
+    };
+    var buildLinkAndImageElement = function(item) {
+        var link = '<a href="' + item.url + '" title="' + item.title + item.description + '" onclick="trackOutboundLink(\'' + item.url + '\', \'' + item.ad_config.category + "-" + item.ad_config.label + '\', \'' + item.ad_config.action + '\');" >';
+        var imgClass;
+        if (item.style.isRound) {
+            imgClass = "carousel-inner img-responsive img-rounded"
+        } else {
+            imgClass = "carousel-inner img-responsive"
+        }
+        return '<li>' + link + '<img class="' + imgClass + '" src="' + item.img_url + '"></a></li>';
+    };
+    var buildDonateInfo = function(id, donate_info_list) {
+        if (donate_info_list.title && donate_info_list.title.length > 0) {
+            $(id).find('#donate-title').text(donate_info_list.title);
+        } else {
+            $(id).find('#donate-title').hide();
+        }
+
+        if (donate_info_list.description && donate_info_list.description.length > 0) {
+            $(id).find('#donate-desc').append(donate_info_list.description);
+        } else {
+            $(id).find('#donate-desc').hide();
+        }
+        if (donate_info_list.data && donate_info_list.data.length > 0) {
+            var donateInfoListBox = $(id).find('#donate-content');
+            donate_info_list.data.forEach(function(item, index) {
+                if (item.isshow) {
+                    item.url = item.url ? item.url : "#";
+                    var donate_info = '<a href="' + item.url + '" target="_blank" title="' + item.title + '"><img src="' + item.img_url + '" style="' + item.img_syle + '" /></a>'
+                    var isAddBreakTag = donate_info_list.data[index + 1] && donate_info_list.data[index + 1].isshow;
+                    if ((index + 1) % 2 == 0 && break_tag && break_tag.length > 0 && isAddBreakTag) {
+                        donate_info += break_tag;
+                    }
+                    donateInfoListBox.append(donate_info);
+                }
+            });
+        }
+        $(id).show();
+    };
+    var buildJobInfoItem = function(job_item) {
+        var job_info = '<p><a href="' + job_item.url + '" target="_blank">' + job_item.title + '</a></p><p>' + job_item.content + '</p>';
+        return '<li>' + job_info + '</li>';
+    };
+    var buildBookItem = function(book) {
+        var link = '<a href="' + book.url + '" target="_blank" title="' + book.title;
+        link = link + (book.isad ? '" onclick="trackOutboundLink(\'' + book.url + '\', \'' + book.ad_config.category + "-" + book.ad_config.label + '\', \'' + book.ad_config.action + '\');" >' : '" >') + book.title;
+        if (book.isShowCover && book.img_url) {
+            var imgClass;
+            if (book.style.isRound) {
+                imgClass = "carousel-inner img-responsive img-rounded"
+            } else {
+                imgClass = "carousel-inner img-responsive"
+            }
+            link = link + '<img class="' + imgClass + '" src="' + book.img_url + '">';
+        }
+        return '<li><p>' + link + '</a></p><p>' + book.description + '</p></li>';
+    };
+    var buildEventItem = function(event) {
+        var event_info = '<p><a href="' + event.url + '" target="_blank">' + event.title + '</a></p><p>' + event.description + '</p>';
+        return '<li>' + event_info + '</li>';
+    };
+    var buildGreenAppInfoItem = function(app, utm_info) {
+        var app_info = '<a href="' + (utm_info ? (app.url + utm_info) : app.url) + '" target="_blank"><center><img class="app-icon" src="' + app.icon + '"><span class="app-name">' + app.name + '</span><span class="app-description">' + app.description + '</span></center></a>';
+        return '<li>' + app_info + '</li>';
+    };
+    var buildAppFriendLinkItem = function(app, utm_info) {
+        var app_info = '<a href="' + (utm_info ? (app.downloadUrl + utm_info) : app.downloadUrl) + '" target="_blank" title="' + app.description + '"><center><img class="app-icon" src="' + app.iconUrl + '"><span class="app-name">' + app.appName + '</span></center></a>';
+        return '<li>' + app_info + '</li>';
+    };
+    var weeklyApp = {
+        initAdList: function() {
+            if (isShowAdList && ad_list && ad_list.data && ad_list.data.length > 0) {
+                if (ad_list.title && ad_list.title.length > 0) {
+                    $("#ad-list-panel").find('.list-title').text(ad_list.title);
+                } else {
+                    $("#ad-list-panel").find('.list-title').hide();
+                }
+                var adListBox = $("#ad-list-panel ul");
+                ad_list.data.forEach(function(item) {
+                    if (item.isshow) {
+                        adListBox.append(buildLinkAndImageElement(item));
+                    }
+                });
+                if ($(adListBox).children()) {
+                    $("#ad-list-panel").show();
+                }
+            }
+        },
+        initPostAdList: function() {
+            if (isShowPostAdList && post_ad_list && post_ad_list.data && post_ad_list.data.length > 0) {
+                if (post_ad_list.title && post_ad_list.title.length > 0) {
+                    $("#post-ad-list-panel").find('.list-title').text(post_ad_list.title);
+                } else {
+                    $("#post-ad-list-panel").find('.list-title').hide();
+                }
+                var adListBox = $("#post-ad-list-panel ul");
+                post_ad_list.data.forEach(function(item) {
+                    if (item.isshow) {
+                        adListBox.append(buildLinkAndImageElement(item));
+                    }
+                });
+                if ($(adListBox).children()) {
+                    $("#post-ad-list-panel").show();
+                }
+            }
+        },
+        initFuckGFWList: function() {
+            if (isShowFuckGFWList && fuck_gfw_list && fuck_gfw_list.data && fuck_gfw_list.data.length > 0) {
+                if (fuck_gfw_list.title && fuck_gfw_list.title.length > 0) {
+                    $("#fuck-gfw-list-panel").find('.list-title').text(fuck_gfw_list.title);
+                } else {
+                    $("#fuck-gfw-list-panel").find('.list-title').hide();
+                }
+                var gfwListBox = $("#fuck-gfw-list-panel ul");
+                fuck_gfw_list.data.forEach(function(item) {
+                    if (item.isshow) {
+                        gfwListBox.append(buildLinkAndImageElement(item));
+                    }
+                });
+                if ($(gfwListBox).children()) {
+                    $("#fuck-gfw-list-panel").show();
+                }
+            }
+        },
+        initDoanateInfoList: function() {
+            if (isShowDonateInfoList && donate_info_list) {
+                buildDonateInfo('#donate-info-panel', donate_info_list);
+            }
+
+            if (isShowPostDonateInfoList && post_donate_info_list) {
+                buildDonateInfo('#post-donate-info-content', post_donate_info_list);
+            }
+        },
+        initJobsInfoList: function() {
+            if (isShowJobsInfoList && post_jobs_info_list) {
+                if (post_jobs_info_list.title && post_jobs_info_list.title.length > 0) {
+                    $("#post-jobs-info-list").find('#jobs-title').text(post_jobs_info_list.title);
+                } else {
+                    $("#post-jobs-info-list").find('#jobs-title').hide();
+                }
+                var jobsListBox = $("#post-jobs-info-list ol");
+                post_jobs_info_list.data.forEach(function(job_item) {
+                    if (job_item.isshow) {
+                        jobsListBox.append(buildJobInfoItem(job_item));
+                    }
+                });
+                if ($(jobsListBox).children()) {
+                    $("#post-jobs-info-list").show();
+                }
+            }
+        },
+        initBookList: function() {
+            if (isShowBookList && books) {
+                if (books.title && books.title.length > 0) {
+                    $("#post-book-list").find('#book-list-title').text(books.title);
+                } else {
+                    $("#post-book-list").find('#book-list-title').hide();
+                }
+                if (books.data && books.data.length > 0) {
+                    var bookListBox = $('#post-book-list ol');
+                    var lastRandomBook = [];
+                    for (var i = 0; i < books.showCount; i++) {
+                        var book = books.data.filter(isShow).randomDiffElement(lastRandomBook);
+                        if (book) {
+                            bookListBox.append(buildBookItem(book))
+                        }
+                        lastRandomBook.push(book);
+                    }
+                    if ($(bookListBox).children()) {
+                        $('#post-book-list').show();
+                    }
+                }
+            }
+        },
+        initEventList: function() {
+            if (isShowEventList && evnets) {
+                if (evnets.title && evnets.title.length > 0) {
+                    $("#post-event-list").find('#event-list-title').text(evnets.title);
+                } else {
+                    $("#post-event-list").find('#event-list-title').hide();
+                }
+                if (evnets.data && evnets.data.length > 0) {
+                    var eventListBox = $('#post-event-list ol');
+                    evnets.data.filter(isShow).forEach(function(event) {
+                        eventListBox.append(buildEventItem(event));
+                    });
+                    if ($(eventListBox).children()) {
+                        $("#post-event-list").show();
+                    }
+                }
+            }
+        },
+        initGreenAppList: function() {
+            if (isShowGreenAppList) {
+                if (greenapps) {
+                    if (greenapps.title && greenapps.title.length > 0) {
+                        $("#green-android-app-list").find('.list-title').text(greenapps.title);
+                    } else {
+                        $("#green-android-app-list").find('.list-title').hide();
+                    }
+                    if (greenapps.description && greenapps.description.length > 0) {
+                        $("#green-android-app-list").find('.description').text(greenapps.description);
+                    } else {
+                        $("#green-android-app-list").find('.description').hide();
+                    }
+                    if (greenapps.url && greenapps.url_name) {
+                        $("#green-android-app-list").find('#btn-join-green-android-plan').text(greenapps.url_name);
+                        $("#green-android-app-list").find('#btn-join-green-android-plan').attr('href', greenapps.url)
+                    } else {
+                        $("#green-android-app-list").find('#btn-join-green-android-plan').hide();
+                    }
+
+                    if (greenapps.data && greenapps.data.length > 0) {
+                        var appListBox = $('#green-android-app-list ul');
+                        var lastRandomApp = [];
+                        for (var i = 0; i < greenapps.showCount; i++) {
+                            var app = greenapps.data.filter(isShow).randomDiffElement(lastRandomApp);
+                            if (app) {
+                                appListBox.append(buildGreenAppInfoItem(app, greenapps.utm_info))
+                            }
+                            lastRandomApp.push(app);
+                        }
+                        appListBox.append(buildGreenAppInfoItem(greenapps.more, greenapps.utm_info))
+                        if ($(appListBox).children()) {
+                            $('#green-android-app-list').show();
+                        } else {
+                            var parent = $('#green-android-app-list').parent();
+                            $(parent).children('hr').hide();
+                        }
+                    }
+                } else {
+                    var parent = $('#green-android-app-list').parent();
+                    $(parent).children('hr').hide();
+                }
+            } else {
+                var parent = $('#green-android-app-list').parent();
+                $(parent).children('hr').hide();
+            }
+        },
+        initAppRecommendList: function() {
+            if (isShowAppRecommendList && app_recommend_info && $("#android-app-friend-link-list")) {
+                var host = window.location.host;
+                if (host.endsWith("androidweekly.cn")){
+                  	app_recommend_info.api_url += "?package_name=cn.androidweekly.website"
+                } else {
+                	app_recommend_info.api_url += "?package_name=xyz.androidweekly.website"
+                }
+                $.getJSON(app_recommend_info.api_url, function(data, status, xhr) {
+                    if (status === 'success' && data && data.code === 100) {
+                        if (app_recommend_info.title && app_recommend_info.title.length > 0) {
+                            $("#android-app-friend-link-list").find('.list-title').append(app_recommend_info.title);
+                        } else {
+                            $("#android-app-friend-link-list").find('.list-title').hide();
+                        }
+                        if (app_recommend_info.logo_icon_url) {
+                            $('#app-friend-link-logo-link').attr('href', app_recommend_info.logo_link);
+                            $('#app-friend-link-logo').attr('src', app_recommend_info.logo_icon_url);
+                        } else {
+                            $('#app-friend-link-logo-link').hide();
+                        }
+                        if (app_recommend_info.description && app_recommend_info.description.length > 0) {
+                            $("#android-app-friend-link-list").find('.description').append(app_recommend_info.description);
+                        } else {
+                            $("#android-app-friend-link-list").find('.description').hide();
+                        }
+                        if (app_recommend_info.btn_url && app_recommend_info.btn_name) {
+                            $("#android-app-friend-link-list").find('#btn-join-app-friend-link-plan').append(app_recommend_info.btn_name);
+                            $("#android-app-friend-link-list").find('#btn-join-app-friend-link-plan').attr('href', app_recommend_info.btn_url)
+                        } else {
+                            $("#android-app-friend-link-list").find('#btn-join-app-friend-link-plan').hide();
+                        }
+                        var appListBox = $('#android-app-friend-link-list ul');
+                        var lastRandomApp = [];
+                        var showCount = data.data.length <= app_recommend_info.showCount ? data.data.length : app_recommend_info.showCount;
+                        for (var i = 0; i < showCount; i++) {
+                            var app = data.data.randomDiffElement(lastRandomApp);
+                            if (app) {
+                                appListBox.append(buildAppFriendLinkItem(app, app_recommend_info.utm_info))
+                            }
+                            lastRandomApp.push(app);
+                        }
+                        if (appListBox.children()) {
+                            $('#android-app-friend-link-list').show();
+                        }
+                    }
+                });
+            }
+        },
+        init: function() {
+            weeklyApp.initAdList();
+            weeklyApp.initPostAdList();
+            weeklyApp.initFuckGFWList();
+            weeklyApp.initDoanateInfoList();
+            weeklyApp.initJobsInfoList();
+            weeklyApp.initBookList();
+            weeklyApp.initEventList();
+            weeklyApp.initGreenAppList();
+            weeklyApp.initAppRecommendList();
+        }
+    }
+
+    /*===========================
+    2. Initialization
+    ==========================*/
+    $(document).ready(function() {
+        weeklyApp.init();
+    });
+</script>
+<script src="https://cdn.jsdelivr.net/npm/algoliasearch@3/dist/algoliasearchLite.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/algoliasearch-helper@2.23.2/dist/algoliasearch.helper.min.js"></script>
+<script>
+    var applicationID = '1HJIZN5DIA';
+	var apiKey = '936b8acf3a8d1dd7ea0cad3d011bd307';
+	var indexName = 'weeklyIndex';
+    
+    var client = algoliasearch(applicationID, apiKey);
+	var helper = algoliasearchHelper(client, indexName);
+    
+    helper.on('result', function(content) {
+      renderHits(content);
+    });
+
+    function renderHits(content) {
+      $('#search-results').html(function() {
+        return $.map(content.hits, function(hit) {
+          console.log(hit);
+          return '<a href="' + hit.url + '">' + hit.title + '</a>';
+        });
+      });
+    }
+    
+    $('#search-input').on('input propertychange', function() {
+      var text = $(this).val();
+      if (!text) {
+          $('#search-results').empty();
+      } else {
+          helper.setQuery(text).search();
+      }
+    });
+</script>
+<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<!-- Commments JS代码 start -->
+<script type="text/javascript">
+	const gitment = new Gitment({
+        id: window.location.pathname,
+		owner: 'inferjay',
+		repo: 'AndroidWeeklyComments',
+		oauth: {
+			client_id: '22c053614d5a5a3d0061',
+			client_secret: 'e7ccd5f6daf26bc9b8aaf1ee7261cbbc008988d2',
+		}
+	})
+
+	gitment.render('gitcomments')
+</script>
+<!-- Comments JS代码 end -->
+<!-- scripts -->
+<script type="text/javascript">
+/* * * DON'T EDIT BELOW THIS LINE * * */
+(function () {
+    var s = document.createElement('script'); s.async = true;
+    s.type = 'text/javascript';
+    s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+}());
+</script>
+<!-- 加载失败时加载本地的 -->
+<script>
+	if (!window.jQuery) {
+		var script = document.createElement('script');
+		script.src = "/assets/js/jquery/2.2.4/jquery.min.js?v=775cc42b9a";
+		document.body.appendChild(script);
+	}
+</script> 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script src="/assets/js/bootstrap.min.js?v=775cc42b9a"></script>
+<script src="/assets/js/plugins.js?v=775cc42b9a"></script>
+<script src="/assets/js/main.js?v=775cc42b9a"></script>
+</body>
 </html>

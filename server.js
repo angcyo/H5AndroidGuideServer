@@ -1,7 +1,8 @@
-var http = require('http');
-let jcodecraeer = require('./jcodecraeer')
-let my_csdn = require('./my_csdn')
-let it_home = require('./it_home')
+const http = require('http');
+const jcodecraeer = require('./jcodecraeer')
+const my_csdn = require('./my_csdn')
+const it_home = require('./it_home')
+const androidweekly = require('./androidweekly')
 
 let port = 9898;
 http.createServer(function (request, response) {
@@ -25,6 +26,12 @@ http.createServer(function (request, response) {
         })
     } else if (url.startsWith('/ithome')) {
         it_home.get({
+            onResult: (json) => {
+                response.end(json);
+            }
+        })
+    } else if (url.startsWith('/androidweekly')) {
+        androidweekly.get({
             onResult: (json) => {
                 response.end(json);
             }
