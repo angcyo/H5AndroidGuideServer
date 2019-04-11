@@ -15,6 +15,8 @@ http.createServer(function (request, response) {
     });
 
     let url = request.url
+
+    console.log(`收到请求:${url}`);
     if (url.startsWith('/jcodecraeer')) {
         jcodecraeer.get({
             onResult: (json) => {
