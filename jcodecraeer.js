@@ -44,7 +44,7 @@ exports.get = (listener) => {
                 //console.log(item.see)
             })
             //console.log(JSON.stringify(result))
-            listener.onResult(JSON.stringify(result))
+            listener && listener.onResult(JSON.stringify(result))
         }).on("error", (e) => {
             // resolve({
             //     result: false,

@@ -1,33 +1,37 @@
 var http = require('http');
 let jcodecraeer = require('./jcodecraeer')
 let my_csdn = require('./my_csdn')
+let it_home = require('./it_home')
 
 let port = 9898;
-http.createServer(function (req, res) {
-    res.writeHead(200, {
+http.createServer(function (request, response) {
+    response.writeHead(200, {
         'Content-Type': 'application/json; charset=utf-8',
         'Access-Control-Allow-Origin': '*'
     });
-    //res.end(req.url);
 
-    let url = req.url
+    let url = request.url
     if (url.startsWith('/jcodecraeer')) {
         jcodecraeer.get({
             onResult: (json) => {
-                res.end(json);
+                response.end(json);
             }
         })
     } else if (url.startsWith('/angcyo')) {
         my_csdn.get({
             onResult: (json) => {
-                res.end(json);
+                response.end(json);
+            }
+        })
+    } else if (url.startsWith('/ithome')) {
+        it_home.get({
+            onResult: (json) => {
+                response.end(json);
             }
         })
     } else {
-        res.end(`非法请求:${url}`);
+        response.end(`大兄弟,不要乱搞啊!`);
     }
-    //jcodecraeer
-
 }).listen(9898, '127.0.0.1');
 
 

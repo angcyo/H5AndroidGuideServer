@@ -1,6 +1,5 @@
 const fs = require("fs")
 const cheerio = require('cheerio')
-// const iconv = require('iconv-lite')
 
 var request = require('request');
 
@@ -48,7 +47,7 @@ exports.get = (listener) => {
             }
         })
 
-        listener.onResult(JSON.stringify(result))
+        listener && listener.onResult(JSON.stringify(result))
     });
 }
 
