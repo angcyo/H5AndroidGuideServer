@@ -44,7 +44,7 @@ exports.get = (listener) => {
                 item.user = user
 
                 item.see = '--'
-                console.log(item.link)
+                // console.log(item.link)
             })
 
             listener && listener.onResult(JSON.stringify(result))

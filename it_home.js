@@ -30,7 +30,7 @@ exports.get = (listener) => {
             item.user = 'IT之家'
 
             item.see = '--'
-            console.log(item.link)
+            // console.log(item.link)
 
         })
 
