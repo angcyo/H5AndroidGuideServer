@@ -7,7 +7,7 @@ const wanandroid = require('./wanandroid')
 const gityuan = require('./gityuan')
 
 const port = 9898;
-const ip = '39.108.53.184'
+const ip = '127.0.0.1'
 http.createServer(function (request, response) {
     response.writeHead(200, {
         'Content-Type': 'application/json; charset=utf-8',
