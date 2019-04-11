@@ -6,11 +6,12 @@ const androidweekly = require('./androidweekly')
 const wanandroid = require('./wanandroid')
 const gityuan = require('./gityuan')
 
-let port = 9898;
+const port = 9898;
+const ip = '39.108.53.184'
 http.createServer(function (request, response) {
     response.writeHead(200, {
         'Content-Type': 'application/json; charset=utf-8',
-        'Access-Control-Allow-Origin': '*'
+        // 'Access-Control-Allow-Origin': '*'
     });
 
     let url = request.url
@@ -53,7 +54,6 @@ http.createServer(function (request, response) {
     } else {
         response.end(`大兄弟,不要乱搞啊!`);
     }
-}).listen(9898, '127.0.0.1');
+}).listen(9898, ip);
 
-
-console.log(`Server running at http://127.0.0.1:${port}/`);
+console.log(`Server running at http://${ip}:${port}/`);
