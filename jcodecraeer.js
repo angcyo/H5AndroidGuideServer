@@ -1,6 +1,7 @@
 const http = require("http")
 const cheerio = require('cheerio')
 const iconv = require('iconv-lite')
+const errorLog = require('./error')
 
 // var request = require('request');
 
@@ -46,10 +47,7 @@ exports.get = (listener) => {
             //console.log(JSON.stringify(result))
             listener && listener.onResult(JSON.stringify(result))
         }).on("error", (e) => {
-            // resolve({
-            //     result: false,
-            //     errmsg: e.message
-            // });
+            errorLog.log(e)
         });
     })
 }

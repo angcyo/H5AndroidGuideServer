@@ -1,4 +1,4 @@
-const fs = require("fs")
+const errorLog = require('./error')
 const cheerio = require('cheerio')
 
 var request = require('request');
@@ -11,9 +11,10 @@ let MAX_COUNT = 5
 exports.get = (listener) => {
     request(url, function (error, response, body) {
         if (error) {
+            errorLog.log(error)
             return
         }
-        
+
         const $ = cheerio.load(body)
         let result = []
         $('.cate_list').find('.ulcl').find('li').each((index, elem) => {
@@ -31,7 +32,7 @@ exports.get = (listener) => {
 
             item.link = $(elem).find('a').eq(0).attr("href")
 
-            item.user = 'IT之家'
+            item.user = 'IT??'
 
             item.see = '--'
             // console.log(item.link)

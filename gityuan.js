@@ -1,7 +1,6 @@
-const fs = require("fs")
 const cheerio = require('cheerio')
-
-var request = require('request');
+const request = require('request');
+const errorLog = require('./error')
 
 var url = 'http://gityuan.com/'
 var BASE_URL = url
@@ -11,6 +10,7 @@ let MAX_COUNT = 5
 exports.get = (listener) => {
     request(url, function (error, response, body) {
         if (error) {
+            errorLog.log(error)
             return
         }
 

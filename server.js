@@ -10,6 +10,14 @@ const gityuan = require('./gityuan')
 const port = 9898;
 const ip = '0.0.0.0'
 http.createServer(function (request, response) {
+    try {
+        handler(request, response)
+    } catch (error) {
+        errorLog(error)
+    }
+}).listen(9898, ip);
+
+function handler(request, response) {
     response.writeHead(200, {
         'Content-Type': 'application/json; charset=utf-8',
         'Access-Control-Allow-Origin': 'http://www.angcyo.com',
@@ -68,13 +76,15 @@ http.createServer(function (request, response) {
     } else {
         response.end(`大兄弟,不要乱搞啊!`);
     }
-}).listen(9898, ip);
+}
 
 function httpLog(data) {
     fs.appendFile('log.log', data, (err) => {
 
     });
 }
+
+
 
 function getClientIP(req) {
     return req.headers['x-forwarded-for'] || // 判断是否有反向代理 IP

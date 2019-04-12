@@ -1,4 +1,4 @@
-const fs = require("fs")
+const errorLog = require('./error')
 const cheerio = require('cheerio')
 
 var request = require('request');
@@ -10,10 +10,10 @@ let MAX_COUNT = 7
 
 exports.get = (listener) => {
     request(url, function (error, response, body) {
-        if (error) {
+       if (error) {
+            errorLog.log(error)
             return
         }
-
         $ = cheerio.load(body)
         let result = []
 
